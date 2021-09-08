@@ -10,17 +10,22 @@
         <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         
         <!-- Title -->
-        <title>Order</title>
+        <title>RO PLANT</title>
 
         <!-- Styles -->
-        <link href="../../assets/font-awesome/Style1.css" rel="stylesheet">
-        <link href="../../assets/font-awesome/style2.css" rel="stylesheet">
-        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../assets/font-awesome/Style1.css" rel="stylesheet">
+        <link href="../assets/font-awesome/style2.css" rel="stylesheet">
+        <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
       
         <!-- Theme Styles -->
-        <link href="../../assets/css/lime.min.css" rel="stylesheet">
-        <link href="../../assets/css/custom.css" rel="stylesheet">
+        <link href="../assets/css/lime.min.css" rel="stylesheet">
+        <link href="../assets/css/custom.css" rel="stylesheet">
+       <!-- CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+ 
+
         <style>
 table {
   font-family: arial, sans-serif;
