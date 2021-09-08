@@ -11,7 +11,7 @@
         <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         
         <!-- Title -->
-        <title>Order</title>
+        <title>RO PLANT</title>
 
         <!-- Styles -->
         <link href="../assets/font-awesome/Style1.css" rel="stylesheet">
@@ -22,6 +22,11 @@
         <!-- Theme Styles -->
         <link href="../assets/css/lime.min.css" rel="stylesheet">
         <link href="../assets/css/custom.css" rel="stylesheet">
+       <!-- CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+ 
+
         <style>
 table {
   font-family: arial, sans-serif;
@@ -57,20 +62,24 @@ tr:nth-child(even) {
                         Apps
                     </li>
                     <li>
-                        <a href="index.html"><i class="material-icons">dashboard</i>Dashboard</a>
+                        <a href="dashboard.php"><i class="material-icons">dashboard</i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="order.php"><i class="material-icons">person_outline</i>Order</a>
+                        <a href="Company-Registration.php"><i class="material-icons">business</i>Company Registration</a>
                     </li>
                     <li>
-                        <a href="customer-detail.php"><i class="material-icons">inbox</i>Order History</a>
+                        <a href="Employee-Registration.php"><i class="material-icons">badge</i>Employee Registration</a>
                     </li>
                     <li>
-                        <a href="todo.html"><i class="material-icons">done_all</i>Todo</a>
+                        <a href="Customer-Registration.php"><i class="material-icons">support_agent</i>Customer Registration</a>
                     </li>
                     <li>
-                        <a href="file-manager.html"><i class="material-icons">cloud_queue</i>File Manager</a>
+                        <a href="order.php"><i class="material-icons">timeline</i>Order</a>
                     </li>
+                    <li>
+                        <a href="customer-detail.php"><i class="material-icons">history</i>Order History</a>
+                    </li>
+                   
                     <li class="sidebar-title">
                         UI Elements
                     </li>
@@ -231,7 +240,7 @@ tr:nth-child(even) {
         <div class="theme-settings-sidebar">
             <div class="theme-settings-inner">
                 <h3 class="theme-sidebar-title">Themes</h3>
-                <p class="themes-info">Select a demo</p>
+                <p class="themes-info">Select a demo.</p>
                 
                 <a class="theme-item active" href="#">
                     <img src="../../assets/images/themes/1.png" alt="">

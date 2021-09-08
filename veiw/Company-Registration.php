@@ -1,5 +1,6 @@
 <?php include '../include/header.php'?>
-        <div class="lime-container">
+
+<div class="lime-container">
             <div class="lime-body">
                 <div class="container">
                     <div class="row">
@@ -11,11 +12,11 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputname">Company Name</label>
-                                                <input type="text" class="form-control" id="inputname" >
+                                                <input type="text" class="form-control" id="inputname" placeholder="" require >
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputphone">Phone Number</label>
-                                                <input type="text" class="form-control" id="inputphone" >
+                                                <input type="text" class="form-control" id="inputphone"  placeholder="" require >
                                             </div>
                                             </div>
                                         <div class="form-row">
@@ -31,6 +32,7 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
         
                     <?php include '..\include\footer.php'?>  
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -54,3 +56,7 @@
                             });
                         })
                     </script>
+=======
+
+                    <?php include '..\include\footer.php'?>  
+>>>>>>> 8304500b03d9ab152df177ea237f40d07f71ef67

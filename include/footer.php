@@ -2,7 +2,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <span class="footer-text">2019 © stacks</span>
+                            <span class="footer-text">2021 © 100 Tech Solutions</span>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,14 @@
         integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" 
         crossorigin="anonymous"
 ></script>
+<script>$('#makeEditable').SetEditable();</script>  
+
+ <!-- <script>$('#makeEditable').SetEditable({ $addButton: $('#but_add')});</script> -->
+<script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
         <script>$("#Total").mask('0000000');</script>
-       
+     
+ <!--JS -->
+
+
     </body>
 </html>

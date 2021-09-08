@@ -1,5 +1,5 @@
 <?php include '../include/header.php'?>
-        <div class="lime-container">
+<div class="lime-container">
             <div class="lime-body">
                 <div class="container">
                     <div class="row">
@@ -11,11 +11,11 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputname">Name</label>
-                                                <input type="text" class="form-control" id="inputname">
+                                                <input type="text" class="form-control" id="inputname"  placeholder="" require>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputAddress"> Address </label>
-                                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" require>
                                             </div>
                                         </div>
                                         <div class="form-row">

@@ -41,58 +41,61 @@
                                         </div>
                                         <h2>Order History</h2>
 
-<table class="t1">
-  <tr class="r1">
-    <th>Customer Name</th>
-    <th>Customer ID</th>
-    <th>Empty Bottles</th>
-    <th>Filled Bottles</th>
-    <th>Date</th>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-  <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-  <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-  <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-  <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-  <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-
+                                        <table class="table" id="makeEditable">
+    
+    <tbody>
+     
+    <thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>Customer ID</th>
+        <th>Empty Bottle </th>
+        <th>Filled Bottles</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+           
+      <tr class="">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+        
+      
                                     </form>
                                 </div>
                             </div>
