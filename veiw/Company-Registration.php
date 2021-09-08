@@ -32,7 +32,6 @@
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
         
                     <?php include '..\include\footer.php'?>  
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -56,7 +55,3 @@
                             });
                         })
                     </script>
-=======
-
-                    <?php include '..\include\footer.php'?>  
->>>>>>> 8304500b03d9ab152df177ea237f40d07f71ef67
