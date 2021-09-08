@@ -43,14 +43,16 @@
                                 "phone_number":$('#inputphone').val(),
                                 "total_bottles":$('#inputT-bottles').val(),
                             };
-                            // alert(formdata.name);
-                            jQuery.ajax({
-                                url:"https://192.168.0.183:8000/api/register/company",
+                            alert(formdata.phone_number);
+                            $.ajax({
+                                url:"http://192.168.0.183:8000/api/register/company",
                                 data:formdata,
                                 type:'POST',
-                                datatype:'json',
                                 success: function(result){
                                     console.log(result);
+                                },
+                                error:function(result){
+                                    console.log(result)
                                 }
                             });
                         })
