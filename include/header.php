@@ -61,13 +61,7 @@ tr:nth-child(even) {
                         Apps
                     </li>
                     <li>
-                        <a href="index.html"><i class="material-icons">dashboard</i>Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="order.php"><i class="material-icons">person_outline</i>Order</a>
-                    </li>
-                    <li>
-                        <a href="customer-detail.php"><i class="material-icons">inbox</i>Order History</a>
+                        <a href="dashboard.php"><i class="material-icons">dashboard</i>Dashboard</a>
                     </li>
                     <li>
                         <a href="Company-Registration.php"><i class="material-icons">business</i>Company Registration</a>
@@ -78,6 +72,13 @@ tr:nth-child(even) {
                     <li>
                         <a href="Customer-Registration.php"><i class="material-icons">support_agent</i>Customer Registration</a>
                     </li>
+                    <li>
+                        <a href="order.php"><i class="material-icons">timeline</i>Order</a>
+                    </li>
+                    <li>
+                        <a href="customer-detail.php"><i class="material-icons">history</i>Order History</a>
+                    </li>
+                   
                     <li class="sidebar-title">
                         UI Elements
                     </li>
