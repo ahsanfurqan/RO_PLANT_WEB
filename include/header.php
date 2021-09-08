@@ -239,7 +239,7 @@ tr:nth-child(even) {
         <div class="theme-settings-sidebar">
             <div class="theme-settings-inner">
                 <h3 class="theme-sidebar-title">Themes</h3>
-                <p class="themes-info">Select a demo</p>
+                <p class="themes-info">Select a demo.</p>
                 
                 <a class="theme-item active" href="#">
                     <img src="../../assets/images/themes/1.png" alt="">
