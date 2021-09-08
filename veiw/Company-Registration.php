@@ -1,22 +1,38 @@
 <?php include '../include/header.php'?>
 
-        <div class="lime-container">
+<div class="lime-container">
             <div class="lime-body">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page-title">
-                                
-                                <h3>Company Registration</h3>
+                                <nav aria-label="breadcrumb">
+                                  <ol class="breadcrumb breadcrumb-separator-1">
+                                    <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Orders</li>
+                                  </ol>
+                                </nav>
+                                <h3>COMPANY REGISTRATION</h3>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                                    
                                     <form>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputname">Company Name</label>
-                                                <input type="text" class="form-control" id="inputname" >
+                                                <input type="text" class="form-control" id="inputname" placeholder="" require >
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputphone">Phone Number</label>
-                                                <input type="text" class="form-control" id="inputphone" >
+                                                <input type="text" class="form-control" id="inputphone"  placeholder="" require >
                                             </div>
                                             </div>
                                         <div class="form-row">
