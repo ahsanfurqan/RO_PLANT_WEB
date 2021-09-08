@@ -7,20 +7,21 @@
         <meta name="description" content="Responsive Admin Dashboard Template">
         <meta name="keywords" content="admin,dashboard">
         <meta name="author" content="stacks">
+        <meta name="csrf-token" content="{{csrf_token()}}">
         <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         
         <!-- Title -->
         <title>Order</title>
 
         <!-- Styles -->
-        <link href="../../assets/font-awesome/Style1.css" rel="stylesheet">
-        <link href="../../assets/font-awesome/style2.css" rel="stylesheet">
-        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../assets/font-awesome/Style1.css" rel="stylesheet">
+        <link href="../assets/font-awesome/style2.css" rel="stylesheet">
+        <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
       
         <!-- Theme Styles -->
-        <link href="../../assets/css/lime.min.css" rel="stylesheet">
-        <link href="../../assets/css/custom.css" rel="stylesheet">
+        <link href="../assets/css/lime.min.css" rel="stylesheet">
+        <link href="../assets/css/custom.css" rel="stylesheet">
         <style>
 table {
   font-family: arial, sans-serif;
