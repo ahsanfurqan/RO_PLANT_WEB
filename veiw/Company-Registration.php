@@ -55,7 +55,7 @@
                                 <a href="lock-screen.html">Lock Screen</a>
                             </li>
                             <li>
-                                <a href="coming-soon.html">Coming Soon</a>
+                                <a href="">Coming Soon</a>
                             </li>
                             <li>
                                 <a href="invoice.html">Invoice</a>
