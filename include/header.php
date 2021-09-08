@@ -70,10 +70,13 @@ tr:nth-child(even) {
                         <a href="customer-detail.php"><i class="material-icons">inbox</i>Order History</a>
                     </li>
                     <li>
-                        <a href="todo.html"><i class="material-icons">done_all</i>Todo</a>
+                        <a href="Company-Registration.php"><i class="material-icons">business</i>Company Registration</a>
                     </li>
                     <li>
-                        <a href="file-manager.html"><i class="material-icons">cloud_queue</i>File Manager</a>
+                        <a href="Employee-Registration.php"><i class="material-icons">badge</i>Employee Registration</a>
+                    </li>
+                    <li>
+                        <a href="Customer-Registration.php"><i class="material-icons">support_agent</i>Customer Registration</a>
                     </li>
                     <li class="sidebar-title">
                         UI Elements
