@@ -6,25 +6,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page-title">
-                                <nav aria-label="breadcrumb">
-                                  <ol class="breadcrumb breadcrumb-separator-1">
-                                    <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Orders</li>
-                                  </ol>
-                                </nav>
-                                <h3>COMPANY REGISTRATION</h3>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl">
-                            <div class="card">
-                                <div class="card-body">
-                                    
-                                    
-                                    <form>
+                                
+                                <h3>Company Registration</h3>
+                                    <form id='comp_reg' class='comp_reg'>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputname">Company Name</label>
@@ -38,7 +22,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="input T-bottles">Total Bottles</label>
-                                                <input type="number" class="form-control" id="input T-bottles">
+                                                <input type="number" class="form-control" id="inputT-bottles">
                                             </div>
                                           
                                         </div>
@@ -48,5 +32,26 @@
                             </div>
                         </div>
                     </div>
-
+        
                     <?php include '..\include\footer.php'?>  
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script>
+                        $('#comp_reg').submit(function(event){
+                            event.preventDefault();
+                            var formdata={
+                                "name":$('#inputname').val(),
+                                "phone_number":$('#inputphone').val(),
+                                "total_bottles":$('#inputT-bottles').val(),
+                            };
+                            // alert(formdata.name);
+                            jQuery.ajax({
+                                url:"https://192.168.0.183:8000/api/register/company",
+                                data:formdata,
+                                type:'POST',
+                                datatype:'json',
+                                success: function(result){
+                                    console.log(result);
+                                }
+                            });
+                        })
+                    </script>
