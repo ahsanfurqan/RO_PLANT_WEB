@@ -61,7 +61,7 @@ tr:nth-child(even) {
             <div class="lime-sidebar-inner slimscroll">
                 <ul class="accordion-menu">
                     <li class="sidebar-title">
-                        Apps
+                        Menu
                     </li>
                     <li>
                         <a href="dashboard.php"><i class="material-icons">dashboard</i>Dashboard</a>
