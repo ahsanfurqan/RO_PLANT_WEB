@@ -42,7 +42,7 @@
 
                                         <table class="table" id="makeEditable">
     
-    <tbody>
+    <!-- <tbody> -->
      
     <thead>
       <tr>
