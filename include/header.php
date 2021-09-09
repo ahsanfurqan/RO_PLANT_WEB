@@ -83,10 +83,10 @@ tr:nth-child(even) {
                         <a href="company-details.php"><i class="material-icons">business</i>Company Details</a>
                     </li>
                     <li>
-                        <a href="employee-details.php"><i class="material-icons">employee</i>Employee Details</a>
+                        <a href="employee-details.php"><i class="material-icons">badge</i>Employee Details</a>
                     </li>
                     <li>
-                        <a href="Bill-Detail.php"><i class="material-icons">bill</i>Bill Details</a>
+                        <a href="Bill-Detail.php"><i class="material-icons">business</i>Bill Details</a>
                     </li>
                    
                     <li class="sidebar-title">
