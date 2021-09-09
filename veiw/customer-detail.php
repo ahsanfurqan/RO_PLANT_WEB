@@ -21,7 +21,7 @@
                         <div class="col-xl">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">ORDER.</h5>
+                                    <h5 class="card-title">ORDER</h5>
                                     
                                     <form>
                                         <div class="form-row">

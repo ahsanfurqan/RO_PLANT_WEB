@@ -46,10 +46,10 @@
      
     <thead>
       <tr>
-        <th>Company Name</th>
-        <th>Company ID</th>
-        <th>Phone Number </th>
-        <th>Total Bottles</th>
+      <th>Company Name</th>
+      <th>Company ID</th>
+      <th>Phone Number </th>
+      <th>Total Bottles</th>
       </tr>
     </thead>
     <tbody id='table_data'>
