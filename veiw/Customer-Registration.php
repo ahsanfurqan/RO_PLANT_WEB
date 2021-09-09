@@ -56,13 +56,8 @@
                                 "company_id":$('#inputc-id').val(),
                             };
                             // alert(formdata.company_id);
-                            $.ajaxSetup({
-                            headers: {
-                                'Accept':'/*',
-                            }
-                            });
                             jQuery.ajax({
-                                url:"http://192.168.0.183:8000/api/register/company",
+                                url:"http://192.168.0.183:8000/api/register/customer",
                                 data:formdata,
                                 type:'POST',
                                 datatype:'json',
