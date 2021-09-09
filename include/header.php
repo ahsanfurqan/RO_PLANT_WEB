@@ -53,6 +53,9 @@ tr:nth-child(even) {
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        <!-- <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> -->
     </head>
 
     <body>
@@ -61,7 +64,7 @@ tr:nth-child(even) {
             <div class="lime-sidebar-inner slimscroll">
                 <ul class="accordion-menu">
                     <li class="sidebar-title">
-                        Apps
+                        Menu
                     </li>
                     <li>
                         <a href="dashboard.php"><i class="material-icons">dashboard</i>Dashboard</a>
@@ -89,6 +92,9 @@ tr:nth-child(even) {
                     </li>
                     <li>
                         <a href="Bill-Detail.php"><i class="material-icons">business</i>Bill Details</a>
+                    </li>
+                    <li>
+                        <a href="Login.php"><i class="material-icons">login</i>Login</a>
                     </li>
                    
                     <li class="sidebar-title">

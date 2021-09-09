@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <?php include '..\include\footer.php'?>
+                    
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script src="jquery.editable.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" 
@@ -99,3 +99,4 @@
                         })
 
                     </script>
+                    <?php include '..\include\footer.php'?>
