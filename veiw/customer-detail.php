@@ -98,4 +98,44 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <?php include '..\include\footer.php'?>
+=======
+                    
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script>
+                    $('#cust_details').submit(function(event){
+                            event.preventDefault();
+                            var name=$('#name').val();
+                            
+                            $.ajax({
+                                url:"http://192.168.0.183:8000/api/search/client/"+name,
+                                // data:formdata,
+                                type:'GET',
+                                success: function(result){
+                                    if(result[0].name){
+                                      for(var i=0;i<result.length; i++){
+                                      var html='<tr>';
+                                      html+='<td>'+result[i].name+'</td>';
+                                      html+='<td>'+result[i].id+'</td>';
+                                      html+='<td>'+result[i].address+'</td>';
+                                      html+='<td>'+result[i].phone_number+'</td>';
+                                      html+='<td>'+result[i].price+'</td></tr>';
+                                    //   html.SetEditable();
+                                    // alert(result[i].name);
+                                      $('#table_data').append(html);
+                                      }
+                                    //   $('#num1').SetEditable();
+                                      
+                                      // $('#com_details')[0].reset();
+                                    }
+                                },
+                                error:function(result){
+                                    console.log(result)
+                                }
+                            });
+                        })
+                        </script>
+
+<?php include '..\include\footer.php'?>
+>>>>>>> 35f7ad2001286b2b1ee412835ae398ca04073a61

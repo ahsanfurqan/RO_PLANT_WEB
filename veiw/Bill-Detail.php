@@ -24,7 +24,7 @@
     <thead>
       <tr>
         <th>Bill ID</th>
-        <th>Client ID</th>
+        <th>Client Name</th>
         <th>Used Bottle </th>
         <th>Amount</th>
         
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                     </div>
-<?php include '..\include\footer.php'?> 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
    $('#bill_details').submit(function(event){
@@ -88,18 +88,18 @@
                                 type:'GET',
                                 success: function(result){
                                   // alert(result[0].bill_id);
-                                    if(result[0].bill_id){
-                                      for(var i=0;i<result.length; i++){
+                                    if(result.bill_id){
+                                      // for(var i=0;i<result.length; i++){
                                       var html='<tr>';
-                                      html+='<td>'+result[i].bill_id+'</td>';
-                                      html+='<td>'+result[i].client_id+'</td>';
-                                      html+='<td>'+result[i].used_bottles+'</td>';
+                                      html+='<td>'+result.bill_id+'</td>';
+                                      html+='<td>'+result.client_name+'</td>';
+                                      html+='<td>'+result.bottles+'</td>';
                                       
-                                      html+='<td>'+result[i].amount+'</td></tr>';
+                                      html+='<td>'+result.amount+'</td></tr>';
                                     //   html.SetEditable();
                                     // alert(result[i].name);
                                       $('#table_data').append(html);
-                                      }
+                                    // }
                                     //   $('#num1').SetEditable();
                                       
                                       // $('#com_details')[0].reset();
@@ -111,3 +111,4 @@
                             });
                         })
   </script>
+<?php include '..\include\footer.php'?> 
