@@ -48,7 +48,8 @@
       <tr>
         <th>Company Name</th>
         <th>Company ID</th>
-        <th>Total Bottles </th>
+        <th>Phone Number </th>
+        <th>Total Bottles</th>
       </tr>
     </thead>
     <tbody id='table_data'>
