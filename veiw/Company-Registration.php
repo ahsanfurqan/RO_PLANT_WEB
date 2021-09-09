@@ -9,6 +9,7 @@
                                 
                                 <h3>Company Registration</h3>
                                     <form id='comp_reg' class='comp_reg'>
+                                        <input type="hidden" name='_token' value='{{csrf_token()}}'>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputname">Company Name</label>
@@ -44,6 +45,11 @@
                                 "total_bottles":$('#inputT-bottles').val(),
                             };
                             alert(formdata.phone_number);
+                            $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                            });
                             $.ajax({
                                 url:"http://192.168.0.183:8000/api/register/company",
                                 data:formdata,
