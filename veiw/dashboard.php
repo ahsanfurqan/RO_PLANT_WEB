@@ -1,3 +1,29 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                    <script>
+                                            async function asyncCall(){
+                                            $.ajax({
+                                            url='http://192.168.0.183:8000/api/display/order',
+                                            type:'GET',  
+                                            success:function(data){
+                                            if(data[0].order_id){
+                                            for(var i=0;i<4; i++){
+                                            var html='<tr>';
+                                            html+='<td>'+data[i].order_id+'</td>';
+                                            html+='<td>'+data[i].client_id+'</td>';
+                                            html+='<td>'+data[i].filled+'</td>';
+                                            html+='<td>'+data[i].cost+'</td></tr>';
+                                            alert(data[i].filled);
+                                                // html+='<td>'+data[i].price+'</td></tr>';
+                                               await $('#table_data').append(html);
+                                            }
+                                        }
+                                    },
+                                    error:function(data){
+                                        console.log(data);
+                                    } 
+                                    })
+                                }
+                                                    </script>
 <?php include '../include/header.php'?>
         <div class="lime-container">
             <div class="lime-body">
@@ -64,23 +90,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" id='ahsan'>
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Last Transactions</h5>
                                     <div class="table-responsive">
-                                        <table class="table">
+                                        <table class="table"id='mytable'>
                                             <thead>
                                                 <tr>
                                                     <th scope="col">ID</th>
-                                                    <th scope="col">Company</th>
+                                                    <th scope="col">Customer</th>
+                                                    <th scope="col">bottles</th>
                                                     <th scope="col">Amount</th>
-                                                    <th scope="col">Status</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
+                                            <tbody id='table_data' onload=asyncCall()>
+                                           
+                                          
+                                                <!-- <tr>
                                                     <td>01</td>
                                                     <td></td>
                                                     <td></td>
@@ -109,7 +137,7 @@
                                                     <td></td>
                                                     <td></td>
                                                     <td><span class="badge badge-secondary"></span></td>
-                                                </tr>
+                                                </tr> -->
                                             </tbody>
                                         </table>
                                     </div>      
@@ -171,3 +199,4 @@
                     </div>
                    
             <?php include '..\include\footer.php'?> 
+            
