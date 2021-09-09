@@ -7,13 +7,10 @@
                         <div class="col-md-12">
                             <div class="page-title">
                                 <nav aria-label="breadcrumb">
-                                  <ol class="breadcrumb breadcrumb-separator-1">
-                                    <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Orders</li>
-                                  </ol>
+                                  
                                 </nav>
-                                <h3>Forms.</h3>
-                                <p class="page-desc">Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
+                                <h3>ORDER</h3>
+                                
                             </div>
                         </div>
                     </div>
@@ -22,7 +19,7 @@
                         <div class="col-xl">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">ORDER</h5>
+                                    
                                     
                                     <form>
                                         <div class="form-row">
