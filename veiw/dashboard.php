@@ -187,7 +187,7 @@
                                                 for(var i=0;i<4; i++){
                                                 var html='<tr>';
                                                 html+='<td>'+data[i].order_id+'</td>';
-                                                html+='<td>'+data[i].client_id+'</td>';
+                                                html+='<td>'+data[i].client.name+'</td>';
                                                 html+='<td>'+data[i].filled+'</td>';
                                                 html+='<td>'+data[i].cost+'</td></tr>';
                                                 // alert(data[i].filled);
