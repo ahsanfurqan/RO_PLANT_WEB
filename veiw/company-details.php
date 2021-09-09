@@ -22,16 +22,16 @@
                                 <div class="card-body">
                                     <h5 class="card-title">COMPANY DETAILS</h5>
                                     
-                                    <form >
+                                    <form id='com_details' class='com_details'>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="name">Company Name</label>
                                                 <input type="text"  id="name" class="form-control"  placeholder="" require>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <!-- <div class="form-group col-md-6">
                                                 <label for="cust">Company ID</label>
                                                 <input type="text"  id="cust" class="form-control"  placeholder="" require>
-                                              </div> 
+                                              </div>  -->
                                             
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -51,26 +51,9 @@
         <th>Total Bottles </th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id='table_data'>
            
-      <tr class="">
-        <td></td>
-        <td></td>
-        <td></td>
-        
-      </tr>
-      <tr class="">
-        <td></td>
-        <td></td>
-        <td></td>
-        
-      </tr>
-      <tr class="">
-        <td></td>
-        <td></td>
-        <td></td>
-        
-      </tr>
+      
      
     </tbody>
   </table>
@@ -84,25 +67,27 @@
                     <?php include '..\include\footer.php'?>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script>
-                       $('#comp_reg').submit(function(event){
+                       $('#com_details').submit(function(event){
                             event.preventDefault();
-                            var formdata={
-                                "name":$('#inputname').val(),
-                                "phone_number":$('#inputphone').val(),
-                                "total_bottles":$('#inputT-bottles').val(),
-                            };
-                            alert(formdata.phone_number);
-                            $.ajaxSetup({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            }
-                            });
+                            var name=$('#name').val();
+                            
                             $.ajax({
-                                url:"http://192.168.0.183:8000/api/register/company",
-                                data:formdata,
-                                type:'POST',
+                                url:"http://192.168.0.183:8000/api/search/company/"+name,
+                                // data:formdata,
+                                type:'GET',
                                 success: function(result){
-                                    console.log(result);
+                                    if(result.name){
+                                      
+                                      var html='<tr>';
+                                      html+='<td>'+result.company_id+'</td>';
+                                      html+='<td>'+result.name+'</td>';
+                                      html+='<td>'+result.phone_number+'</td>';
+                                      html+='<td>'+result.total_bottles+'</td></tr>';
+                                      
+                                      $('#table_data').prepend(html);
+                                      alert(result.name);
+                                      // $('#com_details')[0].reset();
+                                    }
                                 },
                                 error:function(result){
                                     console.log(result)
