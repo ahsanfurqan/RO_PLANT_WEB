@@ -51,10 +51,10 @@
                                 data:formdata,
                                 type:'POST',
                                 success: function(result){
-                                    console.log(result);
+                                    alert(result.status_message);
                                 },
                                 error:function(result){
-                                    console.log(result)
+                                    alert(result[0]);
                                 }
                             });
                         })
