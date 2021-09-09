@@ -70,7 +70,7 @@
                        $('#com_details').submit(function(event){
                             event.preventDefault();
                             var name=$('#name').val();
-                            
+                            // $('#makeEditable').SetEditable();
                             $.ajax({
                                 url:"http://192.168.0.183:8000/api/search/company/"+name,
                                 // data:formdata,
@@ -83,8 +83,10 @@
                                       html+='<td>'+result.name+'</td>';
                                       html+='<td>'+result.phone_number+'</td>';
                                       html+='<td>'+result.total_bottles+'</td></tr>';
+                                    //   html.SetEditeable();
                                       
                                       $('#table_data').prepend(html);
+                                      
                                       alert(result.name);
                                       // $('#com_details')[0].reset();
                                     }
