@@ -6,12 +6,9 @@
                         <div class="col-md-12">
                             <div class="page-title">
                                 <nav aria-label="breadcrumb">
-                                  <ol class="breadcrumb breadcrumb-separator-1">
-                                    <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Forms</li>
-                                  </ol>
+                                  
                                 </nav>
-                                
+                                <h3>Company Details</h3>
                             </div>
                         </div>
                     </div>
@@ -20,7 +17,7 @@
                         <div class="col-xl">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">COMPANY DETAILS</h5>
+                                   
                                     
                                     <form id='com_details' class='com_details'>
                                         <div class="form-row">
@@ -40,9 +37,9 @@
                                         </div>
                                         <h2>Details</h2>
 
-                                        <table class="table" id="makeEditable">
+                                        <table class="table" id="makeEditable" style='width:100%'>
     
-    <tbody>
+    <!-- <tbody> -->
      
     <thead>
       <tr>
@@ -53,7 +50,7 @@
       </tr>
     </thead>
     <tbody id='table_data'>
-           
+        
       
      
     </tbody>
@@ -67,6 +64,11 @@
                     </div>
                     <?php include '..\include\footer.php'?>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="jquery.editable.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" 
+        integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" 
+        crossorigin="anonymous"></script>
+
                     <script>
                        $('#com_details').submit(function(event){
                             event.preventDefault();
@@ -78,15 +80,15 @@
                                 type:'GET',
                                 success: function(result){
                                     if(result.name){
-                                      
-                                      var html='<tr>';
-                                      html+='<td>'+result.company_id+'</td>';
+                                      var html='<tr class="num1">';
                                       html+='<td>'+result.name+'</td>';
+                                      html+='<td>'+result.company_id+'</td>';
                                       html+='<td>'+result.phone_number+'</td>';
                                       html+='<td>'+result.total_bottles+'</td></tr>';
-                                      
-                                      $('#table_data').prepend(html);
-                                      alert(result.name);
+                                    //   html.SetEditable();
+                                      $('#table_data').append(html);
+                                    //   $('#num1').SetEditable();
+                                    //   alert(result.name);
                                       // $('#com_details')[0].reset();
                                     }
                                 },

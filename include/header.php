@@ -70,22 +70,22 @@ tr:nth-child(even) {
                         <a href="Company-Registration.php"><i class="material-icons">business</i>Company Registration</a>
                     </li>
                     <li>
+                        <a href="company-details.php"><i class="material-icons">business</i>Company Details</a>
+                    </li>
+                    <li>
                         <a href="Employee-Registration.php"><i class="material-icons">badge</i>Employee Registration</a>
+                    </li>
+                    <li>
+                        <a href="employee-details.php"><i class="material-icons">badge</i>Employee Details</a>
                     </li>
                     <li>
                         <a href="Customer-Registration.php"><i class="material-icons">support_agent</i>Customer Registration</a>
                     </li>
                     <li>
-                        <a href="order.php"><i class="material-icons">timeline</i>Order</a>
+                        <a href="customer-detail.php"><i class="material-icons">history</i>Customer Details</a>
                     </li>
                     <li>
-                        <a href="customer-detail.php"><i class="material-icons">history</i>Order History</a>
-                    </li>
-                    <li>
-                        <a href="company-details.php"><i class="material-icons">business</i>Company Details</a>
-                    </li>
-                    <li>
-                        <a href="employee-details.php"><i class="material-icons">badge</i>Employee Details</a>
+                        <a href="order.php"><i class="material-icons">timeline</i>Orders</a>
                     </li>
                     <li>
                         <a href="Bill-Detail.php"><i class="material-icons">business</i>Bill Details</a>
