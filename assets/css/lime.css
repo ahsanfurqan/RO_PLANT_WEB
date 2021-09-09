@@ -1403,7 +1403,7 @@ strong,
 .badge {
     padding: 6px 10px;
     font-weight: 600;
-    font-size: ;
+    
 }
 
 .badge.badge-primary {
@@ -3491,7 +3491,7 @@ body.err-500 .error-image {
 
 .upgrade-image {
     height: 180px;
-    background: url(../images/file-manager-upgrade.svg) center center no-repeat;
+    background: url(../images/images.jpg) center center no-repeat;
     background-size: contain;
 }
 
@@ -3527,7 +3527,11 @@ body.err-500 .error-image {
 
 .info-image {
     height: 200px;
-    background: url(../images/images.jpg) center center no-repeat;
+
+    background: url(../images/one.jpg) center center no-repeat;
+
+    background: url(../images/one.jpg) center center no-repeat !important;
+
     background-size: contain;
 }
 
