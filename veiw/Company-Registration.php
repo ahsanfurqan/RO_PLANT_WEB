@@ -45,12 +45,7 @@
                                 "phone_number":$('#inputphone').val(),
                                 "total_bottles":$('#inputT-bottles').val(),
                             };
-                            alert(formdata.phone_number);
-                            $.ajaxSetup({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            }
-                            });
+                            alert(formdata.phone_number)
                             $.ajax({
                                 url:"http://192.168.0.183:8000/api/register/company",
                                 data:formdata,
