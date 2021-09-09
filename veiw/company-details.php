@@ -28,10 +28,7 @@
                                                 <label for="name">Company Name</label>
                                                 <input type="text"  id="name" class="form-control"  placeholder="" require>
                                             </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="cust">Company ID</label>
-                                                <input type="text"  id="cust" class="form-control"  placeholder="" require>
-                                              </div> 
+                                            
                                             
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
