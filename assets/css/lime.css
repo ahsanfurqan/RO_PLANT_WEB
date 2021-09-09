@@ -3527,7 +3527,7 @@ body.err-500 .error-image {
 
 .info-image {
     height: 200px;
-    background: url(../images/dashboard-info.svg) center center no-repeat;
+    background: url(../images/images.jpg) center center no-repeat;
     background-size: contain;
 }
 
