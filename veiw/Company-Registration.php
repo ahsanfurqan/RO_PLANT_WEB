@@ -35,3 +35,26 @@
         
                     <?php include '..\include\footer.php'?>  
                     
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+                        $('#comp_reg').submit(function(event){
+                            event.preventDefault();
+                            var formdata={
+                                "name":$('#inputname').val(),
+                                "phone_number":$('#inputphone').val(),
+                                "total_bottles":$('#inputT-bottles').val(),
+                            };
+                            alert(formdata.phone_number);
+                            $.ajax({
+                                url:"http://192.168.0.183:8000/api/register/company",
+                                data:formdata,
+                                type:'POST',
+                                success: function(result){
+                                    console.log(result);
+                                },
+                                error:function(result){
+                                    console.log(result)
+                                }
+                            });
+                        })
+                    </script>   
