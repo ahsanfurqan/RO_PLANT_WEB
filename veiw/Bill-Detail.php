@@ -154,7 +154,7 @@
                                     }
                                 },
                                 error:function(result){
-                                    console.log(result)
+                                    alert(result.status_message);
                                 }
                             });
                         })

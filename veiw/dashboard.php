@@ -1,29 +1,5 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                                    <script>
-                                            async function asyncCall(){
-                                            $.ajax({
-                                            url='http://192.168.0.183:8000/api/display/order',
-                                            type:'GET',  
-                                            success:function(data){
-                                            if(data[0].order_id){
-                                            for(var i=0;i<4; i++){
-                                            var html='<tr>';
-                                            html+='<td>'+data[i].order_id+'</td>';
-                                            html+='<td>'+data[i].client_id+'</td>';
-                                            html+='<td>'+data[i].filled+'</td>';
-                                            html+='<td>'+data[i].cost+'</td></tr>';
-                                            alert(data[i].filled);
-                                                // html+='<td>'+data[i].price+'</td></tr>';
-                                               await $('#table_data').append(html);
-                                            }
-                                        }
-                                    },
-                                    error:function(data){
-                                        console.log(data);
-                                    } 
-                                    })
-                                }
-                                                    </script>
+
+                                   
 <?php include '../include/header.php'?>
         <div class="lime-container">
             <div class="lime-body">
@@ -199,4 +175,30 @@
                     </div>
                    
             <?php include '..\include\footer.php'?> 
+            <script>
+                                //             async function asyncCall(){
+                                            
+                                // }
+                                $.ajax({
+                                            url:'http://192.168.0.183:8000/api/display/order',
+                                            type:'GET',  
+                                            success:function(data){
+                                                if(data[0].order_id){
+                                                for(var i=0;i<4; i++){
+                                                var html='<tr>';
+                                                html+='<td>'+data[i].order_id+'</td>';
+                                                html+='<td>'+data[i].client.name+'</td>';
+                                                html+='<td>'+data[i].filled+'</td>';
+                                                html+='<td>'+data[i].cost+'</td></tr>';
+                                                // alert(data[i].filled);
+                                            //   html+='<td>'+data[i].price+'</td></tr>';
+                                             $('#table_data').append(html);
+                                            }
+                                     }
+                                    },
+                                    error:function(data){
+                                        console.log(data);
+                                    } 
+                                    })
+                                                    </script>
             
