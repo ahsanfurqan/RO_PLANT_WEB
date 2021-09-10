@@ -176,5 +176,9 @@
                         })
                         </script>
 
+<<<<<<< HEAD
 <?php include '..\include\footer.php'?>
 >>>>>>> 35f7ad2001286b2b1ee412835ae398ca04073a61
+=======
+<?php include '../include/footer.php'?>
+>>>>>>> 8868176d8837358ed221503b0c2a35f429afe3c9
