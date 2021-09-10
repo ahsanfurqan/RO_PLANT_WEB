@@ -20,7 +20,7 @@
                         <div class="col-xl">
                             <div class="card">
                                 <div class="card-body">
-                                         <form>
+                                         <form id='emp_reg'>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputname">Employee Name</label>
@@ -42,6 +42,10 @@
                                             </div>
                                         </div>
                                         <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                                <label for="inputPassword5">Confirm Password</label>
+                                                <input type="password" class="form-control" id="inputPassword5" placeholder="Confirm Password" require>
+                                            </div>
                                             <div class="form-group col-md-6">
                                                 <label for="input-date">Date of Joining</label>
                                                 <input type="date" class="form-control" id="input-date">
@@ -59,3 +63,31 @@
                     </div>
                    
                     <?php include '../include/footer.php'?>
+                    <script>
+                        $('#emp_reg').submit(function(event){
+                            event.preventDefault();
+                            var formdata={
+                                'name':$('#inputname').val(),
+                                'email':$('#inputemail').val(),
+                                'phone_number':$("#inputphone").val(),
+                                'salary':$('#input-salary').val(),
+                                'password':$('#inputPassword4').val(),
+                                'confirm_password':$('#inputPassword5').val(),
+                                'date_of_joining':$('#input-date').val(),
+                                'address':"sa45",
+                            };
+                            alert(formdata.name);
+                            $.ajax({
+                                url:"http://192.168.0.183:8000/api/register/employee",
+                                data:formdata,
+                                type:'POST',
+                                success:function(result){
+                                    console.log(result);
+                                },
+                                error:function(result){
+                                    console.log(result);
+                                }
+                            });
+                        })
+                    </script>
+                    

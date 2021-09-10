@@ -21,19 +21,19 @@
                                 <div class="card-body">
                                     
                                     
-                                    <form>
+                                    <form id='order_form'>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="name">Barcode</label>
-                                                <input type="text"  id="name" class="form-control"  placeholder="" require>
+                                                <input type="text"  id="barcode" class="form-control"  placeholder="" require>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="cust">Empty Bottles</label>
-                                                <input type="text"  id="cust" class="form-control"  placeholder="" require>
+                                                <input type="text"  id="e_bottles" class="form-control"  placeholder="" require>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="cust">Filled Bottles</label>
-                                                <input type="text"  id="cust" class="form-control"  placeholder=""require>
+                                                <input type="text"  id="f_bottles" class="form-control"  placeholder=""require>
                                             </div>
                                             
                                         </div>
@@ -47,4 +47,28 @@
                             </div>
                         </div>
                     </div>
-               <?php include '../include/footer.php'?>       
+                    <?php include '../include/footer.php'?>       
+               <script>
+                   $('#order_form').submit(function(event){
+                        event.preventDefault();
+                            var formdata={
+                                'barcode':$('#barcode').val(),
+                                'empty':$('#e_bottles').val(),
+                                'filled':$('#f_bottles').val(),
+                                'token':"Ro66yMNTYNZAlO2usbnjITJWhIPAQ792nTvwLzMj6zbYGhlWUgxVUNOeuKLF",
+                            };
+                            $.ajax({
+                                url:"http://192.168.0.183:8000/api/add/order",
+                                type:'POST',
+                                data:formdata,
+                                success: function(result){
+                                    alert.success(result.status_message);
+                                    console.log(result.status_message);
+                                },
+                                error:function(result){
+                                    console.log(result);
+                                }
+                            });
+                   })
+               </script>
+                 
