@@ -46,8 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lime-container">
-            <div class="lime-body">
+                    
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -60,9 +59,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lime-container">
-            <div class="lime-body">
-                <div class="container">
+                   
                 <div class="row">
                         <div class="col-xl">
                             <div class="card">
@@ -123,10 +120,11 @@
       
     </tbody>
   </table>
+  </div>
 </div>
 </div>
 </div>
-</div>
+
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script>
                     $('#cust_details').submit(function(event){
