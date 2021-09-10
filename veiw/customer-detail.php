@@ -18,25 +18,25 @@
                         <div class="col-xl">
                             <div class="card">
                                 <div class="card-body">
-                                   
+                                    <h5 class="card-title"></h5>
                                     
-                                    <form>
+                                    <form id='cust_details'>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="name">Customer Name</label>
                                                 <input type="text"  id="name" class="form-control"  placeholder="" require>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <!-- <div class="form-group col-md-6">
                                                 <label for="cust">Custumer ID</label>
                                                 <input type="text"  id="cust" class="form-control"  placeholder="" require>
-                                              </div> 
+                                              </div>  -->
                                             
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Search</button>
                                         
 
                                         </div>
-                                        <h3>Order History</h3>
+                                        <h3></h3>
 
                                        
         
@@ -78,14 +78,14 @@
       <tr>
         <th>Customer Name</th>
         <th>Customer ID</th>
-        <th>Empty Bottle </th>
-        <th>Filled Bottles</th>
-  </th>
+        <th>Address </th>
+        <th>Phone Number</th>
+        <th>Rate</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id='table_data'>
            
-      <tr class="">
+      <!-- <tr class="">
         <td></td>
         <td></td>
         <td></td>
@@ -119,28 +119,14 @@
         <td></td>
         <td></td>
         <td></td>
-      </tr>
+      </tr> -->
       
     </tbody>
   </table>
-<<<<<<< HEAD
-        
-      
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-<<<<<<< HEAD
-                    <?php include '..\include\footer.php'?>
-=======
-                    
-=======
 </div>
 </div>
 </div>
 </div>
->>>>>>> bf1b5ffd4147b5060c376944038c2fd16e943241
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script>
                     $('#cust_details').submit(function(event){
@@ -176,9 +162,4 @@
                         })
                         </script>
 
-<<<<<<< HEAD
-<?php include '..\include\footer.php'?>
->>>>>>> 35f7ad2001286b2b1ee412835ae398ca04073a61
-=======
 <?php include '../include/footer.php'?>
->>>>>>> 8868176d8837358ed221503b0c2a35f429afe3c9
