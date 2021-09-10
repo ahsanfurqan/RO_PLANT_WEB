@@ -11,17 +11,17 @@
                         <div class="col-md-12">
                             <div class="page-title">
                                 <center>
-                                <h3>Login Page</h3>
+                                <h3>Reset Password</h3>
                                     <form  style="max-width:300px;">    
                             
-                                    <div class="form-group" >
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                    </div>
+    
                                    
                                   
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        <a href="forgetpass.php" style="float:right;">forgot password?</a>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
                                     </div>
                                     
                                     
