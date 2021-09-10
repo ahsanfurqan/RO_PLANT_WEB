@@ -38,7 +38,39 @@
                                         </div>
                                         <h3>Order History</h3>
 
-                                        <table class="table" id="makeEditable">
+                                       
+        
+      
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lime-container">
+            <div class="lime-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-title">
+                                <nav aria-label="breadcrumb">
+                                 
+                                </nav>
+                                <h3>Details</h3>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lime-container">
+            <div class="lime-body">
+                <div class="container">
+                <div class="row">
+                        <div class="col-xl">
+                            <div class="card">
+                                <div class="card-body">
+                                <nav aria-label="breadcrumb">
+                                 
+                                </nav>
+                    <table class="table" id="makeEditable">
     
     <tbody>
      
@@ -91,6 +123,7 @@
       
     </tbody>
   </table>
+<<<<<<< HEAD
         
       
                                     </form>
@@ -102,6 +135,12 @@
                     <?php include '..\include\footer.php'?>
 =======
                     
+=======
+</div>
+</div>
+</div>
+</div>
+>>>>>>> bf1b5ffd4147b5060c376944038c2fd16e943241
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script>
                     $('#cust_details').submit(function(event){

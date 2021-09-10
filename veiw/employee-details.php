@@ -1,30 +1,31 @@
 <?php include '../include/header.php'?>
-        <div class="lime-container">
+<div class="lime-container">
             <div class="lime-body">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page-title">
                                 <nav aria-label="breadcrumb">
-                                  <ol class="breadcrumb breadcrumb-separator-1">
-                                    <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Forms</li>
-                                  </ol>
+                                  
                                 </nav>
-                                
+                                <h3>Employee Details</h3>
                             </div>
                         </div>
                     </div>
-
+                    <div class="lime-body">
+                <div class="container">
                     <div class="row">
-                        <div class="col-xl">
+                    <div class="col-xl">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">EMPLOYEE DETAILS</h5>
                                     
-                                    <form id='emp_details'>
+                        <div class="col-md-12">
+                            <div class="page-title">
+                                    <form >
+                                       
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
+
                                                 <label for="name">Employee Name</label>
                                                 <input type="text"  id="name" class="form-control"  placeholder="" require>
                                             </div>
@@ -38,61 +39,87 @@
                                         
 
                                         </div>
-                                        <h2>Details</h2>
-
-                                        <table class="table" id="makeEditable">
-    
-    <!-- <tbody> -->
-     
-    <thead>
-      <tr>
-        <th>Employee Name</th>
-        <th>Employee Phone Number</th>
-        <th>Date Of Joining </th>
-        <th>Salary</th>
-      </tr>
-    </thead>
-    <tbody id='table_data'>
-<!--            
-      <tr class="">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-
-      <tr class="">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        
-      </tr>
-      <tr class="">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        
-      </tr>
-      <tr class="">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        
-      </tr> -->
-     
-    </tbody>
-  </table>
+                                       
         
       
                                     </form>
                                 </div>
                             </div>
                         </div>
+                        <div class="lime-container">
+            <div class="lime-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-title">
+                                <nav aria-label="breadcrumb">
+                                  
+                                </nav>
+                                <h3> Details</h3>
+                            </div>
+                        </div>
                     </div>
-                    
+                        <div class="lime-body">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-xl">
+                            <div class="card">
+                                <div class="card-body">
+                        
+
+<table class="table" id="makeEditable">
+
+<!-- <tbody> -->
+
+<thead>
+<tr>
+<th>Employee Name</th>
+<th>Employee Phone Number</th>
+<th>Date Of Joining </th>
+<th>Salary</th>
+</tr>
+</thead>
+<tbody id='table_data'>
+<!--            
+<tr class="">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr class="">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
+</tr>
+<tr class="">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
+</tr>
+<tr class="">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
+</tr> -->
+
+</tbody>
+</table>
+                      
+                    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<?php include '..\include\footer.php'?>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script>
                     $('#emp_details').submit(function(event){
@@ -126,4 +153,4 @@
                             });
                         })
                         </script>
-                        <?php include '..\include\footer.php'?>
+                      

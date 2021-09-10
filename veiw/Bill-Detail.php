@@ -1,13 +1,30 @@
   <?php include '..\include\header.php'?>
+
 <div class="lime-container">
             <div class="lime-body">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page-title">
+                                <nav aria-label="breadcrumb">
+                                  
+                                </nav>
+                                <h3>BIll Details</h3>
+                            </div>
+                        </div>
+                    </div>
+            
                                 
-                                <h3>Bill Details</h3>
-                                    <form id="bill_details">>
+                    <div class="lime-body">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-xl">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                        <div class="col-md-12">
+                            <div class="page-title">
+                                    <form id="bill_details">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputname">Client ID</label>
@@ -17,7 +34,36 @@
                                           
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
-                                        <table class="table" id="makeEditable">
+                                       
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</div>
+</div>
+<div class="lime-container">
+            <div class="lime-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-title">
+                                <nav aria-label="breadcrumb">
+                                  
+                                </nav>
+                                <h3>Details</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lime-body">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-xl">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                        <div class="col-md-12">
+<table class="table" id="makeEditable">
     
     <tbody>
      
@@ -70,11 +116,13 @@
        -->
     </tbody>
   </table>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -106,7 +154,7 @@
                                     }
                                 },
                                 error:function(result){
-                                    console.log(result)
+                                    alert(result.status_message);
                                 }
                             });
                         })

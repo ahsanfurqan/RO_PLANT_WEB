@@ -6,34 +6,51 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page-title">
-                                
+                                <nav aria-label="breadcrumb">
+                                  
+                                </nav>
                                 <h3>Company Registration</h3>
+                            </div>
+                        </div>
+                    </div>
+                                <div class="lime-body">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-xl">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                        <div class="col-md-12">
+                            <div class="page-title">
                                     <form id='comp_reg' class='comp_reg'>
                                         <input type="hidden" name='_token' value='{{csrf_token()}}'>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="inputname">Company Name</label>
-                                                <input type="text" class="form-control" id="inputname" placeholder="" require >
+                                                <label for="name">Company Name</label>
+                                                <input type="text"  id="name" class="form-control"  placeholder="" require>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="inputphone">Phone Number</label>
-                                                <input type="text" class="form-control" id="inputphone"  placeholder="" require >
+                                                <label for="cust">Phone Number</label>
+                                                <input type="text"  id="cust" class="form-control"  placeholder="" require>
                                             </div>
-                                            </div>
-                                        <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="input T-bottles">Total Bottles</label>
-                                                <input type="number" class="form-control" id="inputT-bottles">
+                                                <label for="cust">Total Bottles</label>
+                                                <input type="number"  id="cust" class="form-control"  placeholder=""require>
                                             </div>
-                                          
+                                            
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Registor</button>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        
+
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-        
+</div>
+</div>
+</div>
                     
                     
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -51,10 +68,10 @@
                                 data:formdata,
                                 type:'POST',
                                 success: function(result){
-                                    console.log(result);
+                                    alert(result.status_message);
                                 },
                                 error:function(result){
-                                    console.log(result)
+                                    alert(result[0]);
                                 }
                             });
                         })
