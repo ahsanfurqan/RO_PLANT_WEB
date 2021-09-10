@@ -174,7 +174,7 @@
                         </div>
                     </div>
                    
-            <?php include '..\include\footer.php'?> 
+            <?php include '../include/footer.php'?> 
             <script>
                                 //             async function asyncCall(){
                                             

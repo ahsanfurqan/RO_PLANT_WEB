@@ -32,7 +32,7 @@
                                               </div>  -->
                                             
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Search</button>
                                         
 
                                         </div>
@@ -162,4 +162,4 @@
                         })
                         </script>
 
-<?php include '..\include\footer.php'?>
+<?php include '../include/footer.php'?>

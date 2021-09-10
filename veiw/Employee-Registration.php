@@ -62,7 +62,7 @@
                         </div>
                     </div>
                    
-                    <?php include '..\include\footer.php'?>
+                    <?php include '../include/footer.php'?>
                     <script>
                         $('#emp_reg').submit(function(event){
                             event.preventDefault();
@@ -90,3 +90,4 @@
                             });
                         })
                     </script>
+                    

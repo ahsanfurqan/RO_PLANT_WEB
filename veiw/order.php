@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-               <?php include '..\include\footer.php'?>    
+                    <?php include '../include/footer.php'?>       
                <script>
                    $('#order_form').submit(function(event){
                         event.preventDefault();
@@ -71,3 +71,4 @@
                             });
                    })
                </script>
+                 

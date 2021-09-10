@@ -21,9 +21,11 @@
                                   
                                     <div class="form-group">
                                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        <a href="forgetpass.php" style="float:right;">forgot password?</a>
                                     </div>
                                     
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    
+                                    <button type="submit" class="btn btn-primary">Login</button>
                                         
                                 </form>
 </div>
@@ -34,7 +36,7 @@
 </div>
 </div>
 </div>
-                                <?php include '..\include\footer.php'?>
+                                <?php include '../include/footer.php'?>
                             </center>
                             <script>
                                 $('#login-form').submit(function(event){
