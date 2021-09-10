@@ -35,26 +35,7 @@
                                         
 
                                         </div>
-                                        <h2>Details</h2>
-
-                                        <table class="table" id="makeEditable" style='width:100%'>
-    
-    <!-- <tbody> -->
-     
-    <thead>
-      <tr>
-      <th>Company Name</th>
-      <th>Company ID</th>
-      <th>Phone Number </th>
-      <th>Total Bottles</th>
-      </tr>
-    </thead>
-    <tbody id='table_data'>
-        
-      
-     
-    </tbody>
-  </table>
+                                        
         
       
                                     </form>
@@ -62,7 +43,53 @@
                             </div>
                         </div>
                     </div>
+                    <div class="lime-container">
+            <div class="lime-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-title">
+                                <nav aria-label="breadcrumb">
+                                  
+                                </nav>
+                                <h3> Details</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lime-container">
+            <div class="lime-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl">
+                            <div class="card">
+                                <div class="card-body">
                     
+
+<table class="table" id="makeEditable" style='width:100%'>
+
+<!-- <tbody> -->
+
+<thead>
+<tr>
+<th>Company Name</th>
+<th>Company ID</th>
+<th>Phone Number </th>
+<th>Total Bottles</th>
+</tr>
+</thead>
+<tbody id='table_data'>
+
+
+
+</tbody>
+</table>   
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script src="jquery.editable.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" 

@@ -3,6 +3,10 @@
             <div class="lime-body">
                 <div class="container">
                     <div class="row">
+                    <div class="col-xl">
+                            <div class="card">
+                                <div class="card-body">
+                                    
                         <div class="col-md-12">
                             <div class="page-title">
                                 <h3>Customer Registration</h3>
@@ -43,7 +47,8 @@
                             </div>
                         </div>
                     </div>
-                     
+</div>
+</div>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script>
                         $('#cust_reg').submit(function(event){
