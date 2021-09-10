@@ -9,6 +9,9 @@
                                     
                         <div class="col-md-12">
                             <div class="page-title">
+                            <nav aria-label="breadcrumb">
+                                  
+                                  </nav>
                                 <h3>Customer Registration</h3>
                                     <form id='cust_reg'>
                                         
