@@ -11,14 +11,14 @@
                             <div class="page-title">
                                 <center>
                                 <h3>Forgot Password?</h3>
-                                    <form id='forgot'  style="max-width:300px;">    
+                                    <form id='forgot-form'  style="max-width:300px;">    
                             
                                     <div class="form-group" >
                                         <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
                                     </div>
                                     
                                     
-                                    <button type="submit" class="btn btn-primary"><a href="resetpass.php" style="color:#fff">Submit</a></button>
+                                    <button type="submit" class="btn btn-primary">Submit</a></button>
                                         
                                 </form>
 </div>
@@ -32,7 +32,7 @@
                                 <?php include '../include/footer.php'?>
                             </center>
                             <script>
-                                $('#forgot').submit(function(event){
+                                $('#forgot-form').submit(function(event){
                                     event.preventDefault();
                                     var formdata={
                                         'email':$('#exampleInputEmail2').val(),
