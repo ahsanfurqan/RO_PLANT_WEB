@@ -48,10 +48,10 @@
                                     alert(formdata.password);
                                     $.ajax({
                                         url:"http://192.168.0.183:8000/api/login",
-                                        type:'POST',
                                         data:formdata,
-                                        succes:function(result){
-                                            alet(result);
+                                        type:'POST',
+                                        success:function(result){
+                                            alert(result);
                                             console.log(result);
                                         },
                                         error:function(result){
