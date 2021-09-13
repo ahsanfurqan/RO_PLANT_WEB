@@ -62,7 +62,7 @@
                                 type:'POST',
                                 data:formdata,
                                 success: function(result){
-                                    alert.success(result.status_message);
+                                    alert(result.status_message);
                                     console.log(result.status_message);
                                 },
                                 error:function(result){
