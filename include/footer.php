@@ -24,7 +24,7 @@
 <script>$('#makeEditable').SetEditable();</script>  
 
  <!-- <script>$('#makeEditable').SetEditable({ $addButton: $('#but_add')});</script> -->
-        <script>$("#Total").mask('0000000');</script>
+        
      
  <!--JS -->
 
