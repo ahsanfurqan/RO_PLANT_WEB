@@ -101,6 +101,9 @@ tr:nth-child(even) {
                     <li>
                         <a href="Login.php"><i class="material-icons">login</i>Login</a>
                     </li>
+                    <li>
+                        <a href="Single-Data.php"><i class="material-icons">badge</i>Single Customer Data </a>
+                    </li>
                    
                     
                             
