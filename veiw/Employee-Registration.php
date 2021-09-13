@@ -47,6 +47,10 @@
                                                 <input type="password" class="form-control" id="inputPassword5" placeholder="Confirm Password" require>
                                             </div>
                                             <div class="form-group col-md-6">
+                                                <label for="inputaddress">Address</label>
+                                                <input type="text" class="form-control" id="inputaddress"  placeholder="" require>
+                                            </div>
+                                            <div class="form-group col-md-6">
                                                 <label for="input-date">Date of Joining</label>
                                                 <input type="date" class="form-control" id="input-date">
                                             </div>
