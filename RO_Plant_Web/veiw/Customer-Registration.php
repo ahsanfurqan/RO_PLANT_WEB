@@ -52,8 +52,11 @@
                     </div>
 </div>
 </div>
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                    <script>
+                    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+                    
+
+<?php include '../include/footer.php'?> 
+<script>
                         $('#cust_reg').submit(function(event){
                             event.preventDefault();
                             var formdata={
@@ -65,7 +68,7 @@
                             };
                             // alert(formdata.company_id);
                             jQuery.ajax({
-                                url:"http://192.168.0.183:8000/api/register/customer",
+                                url:"http://192.168.0.183:8000/api/register/client",
                                 data:formdata,
                                 type:'POST',
                                 datatype:'json',
@@ -75,5 +78,3 @@
                             });
                         })
                     </script>
-
-<?php include '../include/footer.php'?> 
