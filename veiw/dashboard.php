@@ -9,7 +9,12 @@
                             <div class="card bg-info text-white">
                                 <div class="card-body">
                                     <div class="dashboard-info row">
-                                        
+                                    <div class="info-text col-md-6">
+                                            <h1 class="card-title" style="font-weight:400px; font-size:36px; color:#007bff;"><b>MY WATER</b></h1>
+                                            <h5 style="font-weight:400px; font-size:24px; color:#007bff;">"Thousands have lived without love, not one without water."</h5>
+                                           
+                                          
+                                        </div>
                                         <div class="info-image col-md-6"></div>
                                     </div>
                                 </div>
@@ -17,14 +22,7 @@
                         </div>      
                         <div class="col-md-4">
                             <div class="card">
-                                <div class="card-body">
-                                    <div class="">
-                                        <div class="">
-                                            <h5 class="card-title">Daily Visitors</h5>
-                                            <canvas id="visitorsChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>                      
                     </div>

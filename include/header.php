@@ -93,6 +93,9 @@ tr:nth-child(even) {
                         <a href="customer-detail.php"><i class="material-icons">history</i>Customer Details</a>
                     </li>
                     <li>
+                        <a href="Single-Data.php"><i class="material-icons">support_agent</i>Single Customer Data </a>
+                    </li>
+                    <li>
                         <a href="order.php"><i class="material-icons">timeline</i>Orders</a>
                     </li>
                     <li>
@@ -101,9 +104,7 @@ tr:nth-child(even) {
                     <li>
                         <a href="Login.php"><i class="material-icons">login</i>Login</a>
                     </li>
-                    <li>
-                        <a href="Single-Data.php"><i class="material-icons">badge</i>Single Customer Data </a>
-                    </li>
+                  
                    
                     
                             

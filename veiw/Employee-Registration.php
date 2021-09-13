@@ -27,26 +27,31 @@
                                                 <label for="inputphone">Employee Phone Number</label>
                                                 <input type="text" class="form-control" id="inputphone"  placeholder="" require>
                                             </div>
+                                           
                                         </div>
                                         <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                                <label for="inputaddress">Address</label>
+                                                <input type="text" class="form-control" id="inputaddress"  placeholder="" require>
+                                            </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputemail">Email</label>
                                                 <input type="Email" class="form-control" id="inputemail"  placeholder="" require>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                           
+                                            
+
+                                        </div>
+                                        <div class="form-row">
+                                        <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Password</label>
                                                 <input type="password" class="form-control" id="inputPassword4" placeholder="Password" require>
                                             </div>
-                                        </div>
-                                        <div class="form-row">
                                         <div class="form-group col-md-6">
                                                 <label for="inputPassword5">Confirm Password</label>
                                                 <input type="password" class="form-control" id="inputPassword5" placeholder="Confirm Password" require>
                                             </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputaddress">Address</label>
-                                                <input type="text" class="form-control" id="inputaddress"  placeholder="" require>
-                                            </div>
+                                            
                                             <div class="form-group col-md-6">
                                                 <label for="input-date">Date of Joining</label>
                                                 <input type="date" class="form-control" id="input-date">
