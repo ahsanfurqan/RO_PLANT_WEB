@@ -11,10 +11,10 @@
                             <div class="page-title">
                                 <center>
                                 <h3>Forgot Password?</h3>
-                                    <form  style="max-width:300px;">    
+                                    <form id='forgot'  style="max-width:300px;">    
                             
                                     <div class="form-group" >
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
                                     </div>
                                     
                                     
@@ -31,4 +31,25 @@
 </div>
                                 <?php include '../include/footer.php'?>
                             </center>
+                            <script>
+                                $('#forgot').submit(function(event){
+                                    event.preventDefault();
+                                    var formdata={
+                                        'email':$('#exampleInputEmail2').val(),
+                                    };
+                                    // alert(formdata.password);
+                                    $.ajax({
+                                        url:"http://192.168.0.183:8000/api/forgot-password",
+                                        data:formdata,
+                                        type:'POST',
+                                        success:function(result){
+                                            alert(result.status_message);
+                                            console.log(result);
+                                        },
+                                        error:function(result){
+                                            console.log(result);
+                                        }
+                                    });
+                                })
+                                </script>
       

@@ -51,7 +51,7 @@
                                         data:formdata,
                                         type:'POST',
                                         success:function(result){
-                                            alert(result);
+                                            alert(result.status_message);
                                             console.log(result);
                                         },
                                         error:function(result){
