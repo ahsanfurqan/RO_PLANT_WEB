@@ -28,7 +28,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputphone">Phone Number</label>
-                                                <input type="text" class="form-control" id="inputphone">
+                                                <input type="text" class="form-control" id="inputphone"  placeholder="03**-*******">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputprice"> Price/Rate </label>
@@ -73,6 +73,7 @@
                                 type:'POST',
                                 datatype:'json',
                                 success: function(result){
+                                    alert(result.status_message)
                                     console.log(result);
                                 }
                             });

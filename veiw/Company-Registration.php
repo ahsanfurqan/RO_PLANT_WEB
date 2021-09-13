@@ -31,7 +31,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="cust">Phone Number</label>
-                                                <input type="text"  id="inputphone" class="form-control"  placeholder="" require>
+                                                <input type="text"  id="inputphone" class="form-control"  placeholder="03**-*******" require>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="cust">Total Bottles</label>
@@ -62,7 +62,7 @@
                                 "phone_number":$('#inputphone').val(),
                                 "total_bottles":$('#inputT-bottles').val(),
                             };
-                            // alert(formdata.phone_number)
+                            alert(formdata.phone_number)
                             $.ajax({
                                 url:"http://192.168.0.183:8000/api/register/company",
                                 data:formdata,
