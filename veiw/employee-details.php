@@ -21,7 +21,7 @@
                                     
                         <div class="col-md-12">
                             <div class="page-title">
-                                    <form >
+                                    <form id='emp_details' >
                                        
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
@@ -118,7 +118,7 @@
 </div>
 </div>
 <?php include '../include/footer.php'?>
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
                     <script>
                     $('#emp_details').submit(function(event){
                             event.preventDefault();

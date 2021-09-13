@@ -18,7 +18,7 @@
                                     </div>
                                     
                                     
-                                    <button type="submit" class="btn btn-primary"><a href="resetpass.php" style="color:#fff">Submit</a></button>
+                                    <button type="submit" class="btn btn-primary">Submit</a></button>
                                         
                                 </form>
 </div>

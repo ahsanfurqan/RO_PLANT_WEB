@@ -27,15 +27,15 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="name">Company Name</label>
-                                                <input type="text"  id="name" class="form-control"  placeholder="" require>
+                                                <input type="text"  id="inputname" class="form-control"  placeholder="" require>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="cust">Phone Number</label>
-                                                <input type="text"  id="cust" class="form-control"  placeholder="" require>
+                                                <input type="text"  id="inputphone" class="form-control"  placeholder="" require>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="cust">Total Bottles</label>
-                                                <input type="number"  id="cust" class="form-control"  placeholder=""require>
+                                                <input type="number"  id="inputT-bottles" class="form-control"  placeholder=""require>
                                             </div>
                                             
                                         </div>
