@@ -66,6 +66,15 @@
                                 "price":$('#inputprice').val(),
                                 "company_id":$('#inputc-id').val(),
                             };
+                            if(formdata.name=='' || formdata.address==''||formdata.phone_number==''||formdata.price=='' || formdata.company_id==''){
+                                swal({
+                                    title: "Fields Empty",
+                                    text: "Please Check the missing Values!!",
+                                    icon: "warning",
+                                    button: "Ok",
+                                    });
+                            }
+                            else{
                             // alert(formdata.company_id);
                             jQuery.ajax({
                                 url:"http://192.168.0.183:8000/api/register/client",
@@ -73,9 +82,24 @@
                                 type:'POST',
                                 datatype:'json',
                                 success: function(result){
-                                    alert(result.status_message)
+                                    // alert(result.status_message)
+                                    swal({
+                                    text:result.status_message ,
+                                    icon: "success",
+                                    button: "Ok",
+                                    }); 
                                     console.log(result);
+                                },
+                                error: function (error) {
+
+                                    swal({
+                                    text:"Data is not valid or a company may be registered with this data ",
+                                    icon: "error",
+                                    button: "Ok",
+                                    }); 
+                                    console.log(error);
                                 }
                             });
+                            }
                         })
                     </script>

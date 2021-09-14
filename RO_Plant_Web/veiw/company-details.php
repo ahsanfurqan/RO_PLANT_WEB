@@ -85,22 +85,54 @@
 </div>
 </div>
 </div>
+<?php include '../include/footer.php'?>
 
-
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script src="jquery.editable.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" 
         integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" 
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 
                     <script>
+                        
+                        $.ajax({
+                                            url:'http://192.168.0.183:8000/api/company',
+                                            type:'GET',  
+                                            success:function(data){
+                                                if(data[0].name){
+                                                for(var i=0;i<data.length; i++){
+                                                var html='<tr>';
+                                                html+='<td>'+data[i].name+'</td>';
+                                                html+='<td>'+data[i].company_id+'</td>';
+                                                html+='<td>'+data[i].phone_number+'</td>';
+                                                html+='<td>'+data[i].total_bottles+'</td></tr>';
+                                                // alert(data[i].filled);
+                                            //   html+='<td>'+data[i].price+'</td></tr>';
+                                             $('#table_data').append(html);
+                                            }
+                                     }
+                                    },
+                                    error:function(data){
+                                        console.log(data);
+                                    } 
+                                    })
                        $('#com_details').submit(function(event){
                             event.preventDefault();
                             var name=$('#name').val();
                             
+                            if(name==''){
+                                swal({
+                                    title: "Fields Empty",
+                                    text: "Please Check the missing Values!!",
+                                    icon: "warning",
+                                    button: "Ok",
+                                    });
+                            }
+                            else{
+                            
                             $.ajax({
                                 url:"http://192.168.0.183:8000/api/search/company/"+name,
-                                // data:formdata,
+                                
                                 type:'GET',
                                 success: function(result){
                                     if(result.name){
@@ -109,20 +141,19 @@
                                       html+='<td>'+result.company_id+'</td>';
                                       html+='<td>'+result.phone_number+'</td>';
                                       html+='<td>'+result.total_bottles+'</td></tr>';
-                                    //   html.SetEditable();
-                                      $('#table_data').append(html);
-                                    //   $('#num1').SetEditable();
-                                    //   alert(result.name);
-                                      // $('#com_details')[0].reset();
+                                   
+                                      $('#table_data').replaceWith(html);
+                                 
                                     }
                                 },
                                 error:function(result){
                                     console.log(result)
                                 }
                             });
+                       }
                         })
-
+                       
                     </script>
 
                     
-                    <?php include '../include/footer.php'?>
+                   

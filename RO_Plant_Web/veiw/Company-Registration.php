@@ -51,32 +51,76 @@
 </div>
 </div>
 </div>
+<?php include '../include/footer.php'?> 
                     
+
+                     
                     
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
                         $('#comp_reg').submit(function(event){
                             event.preventDefault();
+                            // var name=$("#inputname").val();
+                            // var phone=$("#inputphone").val();
+                            // var bottle=$("#inputT-bottles").val();
                             var formdata={
                                 "name":$('#inputname').val(),
                                 "phone_number":$('#inputphone').val(),
                                 "total_bottles":$('#inputT-bottles').val(),
                             };
-                            alert(formdata.phone_number)
+                            if( formdata.name=='' ||  formdata.phone_number=='' ||  formdata.total_bottles==''){
+                                swal({
+                                    title: "Fields Empty",
+                                    text: "Please Check the missing Values!!",
+                                    icon: "warning",
+                                    button: "Ok",
+                                    });
+                            }
+                            else{
+                                
+                            
+                            // alert(formdata.phone_number);
                             $.ajax({
                                 url:"http://192.168.0.183:8000/api/register/company",
                                 data:formdata,
                                 type:'POST',
                                 success: function(result){
-                                    alert(result.status_message);
+                                    // alert(result.status_message);
+                                    swal({
+                                    text:result.status_message ,
+                                    icon: "success",
+                                    button: "Ok",
+                                    });
                                 },
                                 error:function(result){
                                     alert(result[0]);
                                 }
                             });
+                            
+                            }
                         })
                     </script> 
                     
-                    
-                    <?php include '../include/footer.php'?>  
+                    // <script>
+                    //     $("#submit").click(function(){
+                    //         var name=$("#inputname").val();
+                    //         var phone=$("#inputphone").val();
+                    //         var bottle=$("#inputT-bottles").val();
+
+                    //         if(name=='' || phone=='' || bottle==''){
+                    //             swal({
+                    //                 title: "Fields Empty",
+                    //                 text: "Please Check the missing Values!!",
+                    //                 icon: "Warning",
+                    //                 button: "Ok",
+                    //                 });
+                    //         }
+                    //         else{
+                    //             swal({
+                    //                 title: "Successfully Registered!!",
+                    //                 icon: "success",
+                    //                 button: "Ok",
+                    //                 });
+                    //         })
+                    //     })
+                    //     </script>
                     
