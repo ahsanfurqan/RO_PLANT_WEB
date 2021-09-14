@@ -27,30 +27,7 @@
         
      
  <!--JS -->
- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-                    <script>
-                        $("#submit").click(function()){
-                            var name=$("#name").val();
-                            var phone=$("#cust").val();
-                            var bottle=$("#cust").val();
 
-                            if(name=='' || phone=='' || bottle==''){
-                                swal({
-                                    title: "Fields Empty",
-                                    text: "Please Check the missing Values!!",
-                                    icon: "Warning",
-                                    button: "Ok",
-                                    });
-                            }
-                            else{
-                                swal({
-                                    title: "Successfully Registered!!",
-                                    icon: "success",
-                                    button: "Ok",
-                                    });
-                            }
-                        }
-                        </script>
 
     </body>
 </html>

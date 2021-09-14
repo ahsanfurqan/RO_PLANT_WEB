@@ -39,7 +39,7 @@
                                             </div>
                                             
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
                                         
 
                                         </div>
@@ -75,5 +75,8 @@
                                 }
                             });
                         })
-                    </script>   
+                    </script> 
+                    
+                    
                     <?php include '../include/footer.php'?>  
+                    
