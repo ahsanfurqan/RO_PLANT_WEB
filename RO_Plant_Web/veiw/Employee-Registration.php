@@ -25,7 +25,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputphone">Employee Phone Number</label>
-                                                <input type="text" class="form-control" id="inputphone"  placeholder="" require>
+                                                <input type="text" class="form-control" id="inputphone"  placeholder="03**-*******" require>
                                             </div>
                                            
                                         </div>

@@ -28,7 +28,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputphone">Phone Number</label>
-                                                <input type="text" class="form-control" id="inputphone">
+                                                <input type="text" class="form-control" id="inputphone"  placeholder="03**-*******">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputprice"> Price/Rate </label>
@@ -52,8 +52,11 @@
                     </div>
 </div>
 </div>
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                    <script>
+                    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+                    
+
+<?php include '../include/footer.php'?> 
+<script>
                         $('#cust_reg').submit(function(event){
                             event.preventDefault();
                             var formdata={
@@ -65,15 +68,14 @@
                             };
                             // alert(formdata.company_id);
                             jQuery.ajax({
-                                url:"http://192.168.0.183:8000/api/register/customer",
+                                url:"http://192.168.0.183:8000/api/register/client",
                                 data:formdata,
                                 type:'POST',
                                 datatype:'json',
                                 success: function(result){
+                                    alert(result.status_message)
                                     console.log(result);
                                 }
                             });
                         })
                     </script>
-
-<?php include '../include/footer.php'?> 
