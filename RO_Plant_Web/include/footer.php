@@ -22,6 +22,7 @@
         crossorigin="anonymous"
 ></script>
 <script>$('#makeEditable').SetEditable();</script>  
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
 
  <!-- <script>$('#makeEditable').SetEditable({ $addButton: $('#but_add')});</script> -->
         
