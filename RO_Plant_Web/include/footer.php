@@ -21,7 +21,8 @@
         integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" 
         crossorigin="anonymous"
 ></script>
-<script>$('#makeEditable').SetEditable();</script>  
+<script>$("#inputphone").mask('0000-0000000');</script>
+<!-- <script>$('#makeEditable').SetEditable();</script>   -->
 
  <!-- <script>$('#makeEditable').SetEditable({ $addButton: $('#but_add')});</script> -->
         
