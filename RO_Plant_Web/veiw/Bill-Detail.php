@@ -130,11 +130,11 @@
                         if(data[0].bill_id){
                           for(var i=0; i<data.length; i++){
                                       var html='<tr>';
-                                      html+='<td>'+data.bill_id+'</td>';
-                                      html+='<td>'+data.client_name+'</td>';
-                                      html+='<td>'+data.bottles+'</td>';
+                                      html+='<td>'+data[i].bill_id+'</td>';
+                                      html+='<td>'+data[i].client_name+'</td>';
+                                      html+='<td>'+data[i].bottles+'</td>';
                                       
-                                      html+='<td>'+data.amount+'</td></tr>';
+                                      html+='<td>'+data[i].amount+'</td></tr>';
                                     //   html.SetEditable();
                                     // alert(result[i].name);
                                       $('#table_data').append(html);
