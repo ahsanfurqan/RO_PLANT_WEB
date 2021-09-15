@@ -27,8 +27,8 @@
                                     <form id="bill_details">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="inputname">Client ID</label>
-                                                <input type="number" class="form-control" id="inputname" >
+                                                <label for="inputname">Client Name</label>
+                                                <input type="text" class="form-control" onkeyup=filter(this.id) id="inputname" >
                                             </div>
                                             
                                           
@@ -61,14 +61,14 @@
                                 <div class="card-body">
                                     
                         <div class="col-md-12">
-<table class="table" id="makeEditable">
+<table class="table" id="myTable">
     
     <tbody>
      
     <thead>
       <tr>
-        <th>Bill ID</th>
         <th>Client Name</th>
+        <th>Bill id</th>
         <th>Used Bottle </th>
         <th>Amount</th>
         
@@ -130,10 +130,9 @@
                         if(data[0].bill_id){
                           for(var i=0; i<data.length; i++){
                                       var html='<tr>';
+                                      html+='<td>'+data[i].client.name+'</td>';
                                       html+='<td>'+data[i].bill_id+'</td>';
-                                      html+='<td>'+data[i].client_name+'</td>';
-                                      html+='<td>'+data[i].bottles+'</td>';
-                                      
+                                      html+='<td>'+data[i].used_bottles+'</td>';
                                       html+='<td>'+data[i].amount+'</td></tr>';
                                     //   html.SetEditable();
                                     // alert(result[i].name);
