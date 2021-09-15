@@ -48,12 +48,15 @@
                                                 <input type="password" class="form-control" id="inputPassword4" placeholder="Password" require>
                                                
                                                 <span>
-                                                <i class="fa fa-eye" id="eye"  ></i>
+                                                <i class="fa fa-eye" id="eye" onclick="toggle()" ></i>
                                                 </span>
                                             </div>
                                         <div class="form-group col-md-6">
                                                 <label for="inputPassword5">Confirm Password</label>
                                                 <input type="password" class="form-control" id="inputPassword5" placeholder="Confirm Password" require>
+                                                <span>
+                                                <i class="fa fa-eye" id="eye1" onclick="toggle1()" ></i>
+                                                </span>
                                             </div>
                                             
                                             <div class="form-group col-md-6">
@@ -123,4 +126,37 @@
                             }
                         })
                     </script>
-                    
+                    <script>
+                                var state=false;
+                                function toggle(){
+                                    if(state){
+                                        document.getElementById("inputPassword4").
+                                            setAttribute("type","password");
+                                            document.getElementById("eye").style.color="#7a797e";
+                                            state=false;
+                                    }
+                                    else{
+                                        document.getElementById("inputPassword4").
+                                            setAttribute("type","text");
+                                            document.getElementById("eye").style.color="#5887ef";
+                                            state=true;
+                                    }
+                                }
+                        </script>
+                         <script>
+                                var state1=false;
+                                function toggle1(){
+                                    if(state1){
+                                        document.getElementById("inputPassword5").
+                                            setAttribute("type","password");
+                                            document.getElementById("eye1").style.color="#7a797e";
+                                            state1=false;
+                                    }
+                                    else{
+                                        document.getElementById("inputPassword5").
+                                            setAttribute("type","text");
+                                            document.getElementById("eye1").style.color="#5887ef";
+                                            state1=true;
+                                    }
+                                }
+                        </script>
