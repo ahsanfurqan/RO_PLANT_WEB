@@ -1,11 +1,11 @@
 $(document).ready(function() {
     
     "use strict";
-    var ctx = document.getElementById('visitorsChart');
+    var ctx = document.getElementById('customersChart');
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Visitors', 'Visitors', 'Visitors', 'Visitors', 'Visitors', 'Visitors', 'Visitors', 'Visitors', 'Visitors', 'Visitors', 'Visitors'],
+            labels: ['Customers', 'Customers', 'Customers', 'Customers', 'Customers', 'Customers', 'Customers', 'Customers', 'Customers', 'Customers', 'Customers'],
             datasets: [{
                 
                 label: 'Total',

@@ -32,7 +32,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputprice"> Price/Rate </label>
-                                                <input type="number" class="form-control" id="inputprice">
+                                                <input type="float" class="form-control" id="inputprice">
                                             </div>
                                         </div>
                                         <div class="form-row">

@@ -20,7 +20,18 @@
                                 </div>
                             </div>
                         </div>   
-                       
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="">
+                                        <div class=""><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                            <h5 class="card-title">Daily Customers</h5>
+                                            <canvas id="customersChart" style="display: block; height: 150px; width: 300px;" class="chartjs-render-monitor" width="375" height="187"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="card">
                                
