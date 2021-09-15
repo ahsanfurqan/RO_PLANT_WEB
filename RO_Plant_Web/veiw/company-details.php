@@ -23,7 +23,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="name">Company Name</label>
-                                                <input type="text"  id="name" class="form-control"  placeholder="" require>
+                                                <input type="text"  id="name" onkeyup=filter(this.id) class="form-control"  placeholder="" require>
                                             </div>
                                             <!-- <div class="form-group col-md-6">
                                                 <label for="cust">Company ID</label>
@@ -63,7 +63,7 @@
                                 <nav aria-label="breadcrumb">
                                  
                                 </nav>
-                                <table class="table" id="makeEditable" style='width:100%'>
+                                <table class="table" id="myTable" style='width:100%'>
 
 <!-- <tbody> -->
 

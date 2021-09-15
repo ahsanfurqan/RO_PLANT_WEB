@@ -24,7 +24,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="name">Customer Name</label>
-                                                <input type="text"  id="name" class="form-control"  placeholder="" require>
+                                                <input type="text"  id="name" onkeyup=filter(this.id) class="form-control"  placeholder="" require>
                                             </div>
                                             <!-- <div class="form-group col-md-6">
                                                 <label for="cust">Custumer ID</label>
@@ -67,7 +67,7 @@
                                 <nav aria-label="breadcrumb">
                                  
                                 </nav>
-                    <table class="table" id="makeEditable">
+                    <table class="table" id="myTable">
     
     <tbody>
      
