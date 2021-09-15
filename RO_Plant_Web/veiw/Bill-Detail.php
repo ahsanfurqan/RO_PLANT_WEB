@@ -122,10 +122,39 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+
+                    $.ajax({
+                      url:"http://192.168.0.183:8000/api/bill",
+                      type:'GET',
+                      success:function(data){
+                        if(data[0].bill_id){
+                          for(var i=0; i<data.length; i++){
+                                      var html='<tr>';
+                                      html+='<td>'+data.bill_id+'</td>';
+                                      html+='<td>'+data.client_name+'</td>';
+                                      html+='<td>'+data.bottles+'</td>';
+                                      
+                                      html+='<td>'+data.amount+'</td></tr>';
+                                    //   html.SetEditable();
+                                    // alert(result[i].name);
+                                      $('#table_data').append(html);
+                          }
+                        }
+                      },
+                    })
+
    $('#bill_details').submit(function(event){
                             event.preventDefault();
                             var name=$('#inputname').val();
-                            
+                            if(name==''){
+                                swal({
+                                    title: "Fields Empty",
+                                    text: "Please Check the missing Values!!",
+                                    icon: "warning",
+                                    button: "Ok",
+                                    });
+                            }
+                            else{
                             $.ajax({
                                 url:"http://192.168.0.183:8000/api/search/bill/"+name,
                                 // data:formdata,
@@ -142,17 +171,23 @@
                                       html+='<td>'+result.amount+'</td></tr>';
                                     //   html.SetEditable();
                                     // alert(result[i].name);
-                                      $('#table_data').append(html);
+                                      $('#table_data').replaceWith(html);
                                     // }
                                     //   $('#num1').SetEditable();
                                       
                                       // $('#com_details')[0].reset();
                                     }
                                 },
-                                error:function(result){
+                                error:function(error){
+                                  swal({
+                                    text:"Data is not valid",
+                                    icon: "error",
+                                    button: "Ok",
+                                    });
                                     alert(result.status_message);
                                 }
                             });
+                            }
                         })
   </script>
 <?php include '../include/footer.php'?> 

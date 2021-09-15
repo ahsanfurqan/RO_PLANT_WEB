@@ -146,7 +146,12 @@
                                  
                                     }
                                 },
-                                error:function(result){
+                                error:function(error){
+                                    swal({
+                                    text:"Data is not valid or a company may be registered with this data ",
+                                    icon: "error",
+                                    button: "Ok",
+                                    });
                                     console.log(result)
                                 }
                             });

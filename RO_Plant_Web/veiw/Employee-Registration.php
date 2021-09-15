@@ -46,6 +46,10 @@
                                         <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Password</label>
                                                 <input type="password" class="form-control" id="inputPassword4" placeholder="Password" require>
+                                               
+                                                <span>
+                                                <i class="fa fa-eye" id="eye"  ></i>
+                                                </span>
                                             </div>
                                         <div class="form-group col-md-6">
                                                 <label for="inputPassword5">Confirm Password</label>
@@ -69,6 +73,8 @@
                     </div>
                    
                     <?php include '../include/footer.php'?>
+
+
                     <script>
                         $('#emp_reg').submit(function(event){
                             event.preventDefault();
@@ -82,18 +88,39 @@
                                 'date_of_joining':$('#input-date').val(),
                                 'address':$('#inputaddress').val(),
                             };
-                            alert(formdata.name);
+                            if(formdata.name=='' || formdata.email==''|| formdata.phone_number==''|| formdata.salary==''||formdata.password==''
+                            || formdata.confirm_password=='' || formdata.date_of_joining=='' || formdata.address==''){
+                                swal({
+                                    title: "Fields Empty",
+                                    text: "Please Check the missing Values!!",
+                                    icon: "warning",
+                                    button: "Ok",
+                                    });
+                            }
+                            else{
+                           
                             $.ajax({
                                 url:"http://192.168.0.183:8000/api/register/employee",
                                 data:formdata,
                                 type:'POST',
                                 success:function(result){
+                                    swal({
+                                    text:result.status_message ,
+                                    icon: "success",
+                                    button: "Ok",
+                                    }); 
                                     console.log(result);
                                 },
-                                error:function(result){
-                                    console.log(result);
+                                error:function(error){
+                                    swal({
+                                    text:"Data is not valid or a company may be registered with this data ",
+                                    icon: "error",
+                                    button: "Ok",
+                                    }); 
+                                    console.log(error);
                                 }
                             });
+                            }
                         })
                     </script>
                     
