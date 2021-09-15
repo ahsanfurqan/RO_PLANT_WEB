@@ -21,6 +21,9 @@
                                   
                                     <div class="form-group">
                                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        <span class="set">
+                                                <i class="fa fa-eye" id="eye" onclick="toggle()" ></i>
+                                                </span>
                                         <a href="forgetpass.php" style="float:right;">forgot password?</a>
                                     </div>
                                     
@@ -81,4 +84,20 @@
                             }
                         })
                                 </script>
-                                          
+                                           <script>
+                                var state=false;
+                                function toggle(){
+                                    if(state){
+                                        document.getElementById("exampleInputPassword1").
+                                            setAttribute("type","password");
+                                            document.getElementById("eye").style.color="#7a797e";
+                                            state=false;
+                                    }
+                                    else{
+                                        document.getElementById("exampleInputPassword1").
+                                            setAttribute("type","text");
+                                            document.getElementById("eye").style.color="#5887ef";
+                                            state=true;
+                                    }
+                                }
+                        </script>

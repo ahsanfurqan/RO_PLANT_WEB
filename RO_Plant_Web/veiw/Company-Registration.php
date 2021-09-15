@@ -99,28 +99,5 @@
                             }
                         })
                     </script> 
-                    
-                    // <script>
-                    //     $("#submit").click(function(){
-                    //         var name=$("#inputname").val();
-                    //         var phone=$("#inputphone").val();
-                    //         var bottle=$("#inputT-bottles").val();
-
-                    //         if(name=='' || phone=='' || bottle==''){
-                    //             swal({
-                    //                 title: "Fields Empty",
-                    //                 text: "Please Check the missing Values!!",
-                    //                 icon: "Warning",
-                    //                 button: "Ok",
-                    //                 });
-                    //         }
-                    //         else{
-                    //             swal({
-                    //                 title: "Successfully Registered!!",
-                    //                 icon: "success",
-                    //                 button: "Ok",
-                    //                 });
-                    //         })
-                    //     })
-                    //     </script>
+                  
                     
