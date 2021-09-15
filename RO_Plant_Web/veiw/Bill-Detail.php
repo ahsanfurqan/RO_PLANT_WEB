@@ -9,7 +9,7 @@
                                 <nav aria-label="breadcrumb">
                                   
                                 </nav>
-                                <h3>BIll Details</h3>
+                                <h3>Bill Details</h3>
                             </div>
                         </div>
                     </div>
@@ -33,8 +33,9 @@
                                             
                                           
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
                                        
+                                        
+
                                     </form>
                                 </div>
                             </div>
@@ -71,7 +72,7 @@
         <th>Bill id</th>
         <th>Used Bottle </th>
         <th>Amount</th>
-        
+        <th>Edit<th>
       </tr>
     </thead>
     <tbody id='table_data'>
@@ -120,73 +121,64 @@
 </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<?php include '../include/footer.php'?>
 <script>
 
                     $.ajax({
                       url:"http://192.168.0.183:8000/api/bill",
                       type:'GET',
                       success:function(data){
-                        if(data[0].bill_id){
+                        if(data.status_message){
+                          console.log(data.status_message)
+                        }
+
+                        else{
                           for(var i=0; i<data.length; i++){
-                                      var html='<tr>';
+                                      var html='<tr >';
                                       html+='<td>'+data[i].client.name+'</td>';
                                       html+='<td>'+data[i].bill_id+'</td>';
                                       html+='<td>'+data[i].used_bottles+'</td>';
-                                      html+='<td>'+data[i].amount+'</td></tr>';
-                                    //   html.SetEditable();
-                                    // alert(result[i].name);
+                                      html+='<td>'+data[i].amount+'</td>';
+                                      html+='<td> <i class="fa fa-trash"id="'+data[i].bill_id+'" onClick= passData(this,this.id)></i></td> </tr>';
+                                      
+                                    
                                       $('#table_data').append(html);
                           }
                         }
+                        
+                        
                       },
+                      // error:function(error){
+                        
+                      //   swal({
+                      //               text:"No Data Exist!! ",
+                      //               icon: "error",
+                      //               button: "Ok",
+                      //               }); 
+                      // }
                     })
+                   function passData(btn,bill_id){
+                    //  var name=document.getElementbyid(bill_id);
+                    var row = btn.parentNode.parentNode;
+                    row.parentNode.removeChild(row);
+                    
+                    $.ajax({
+                       url:"http://192.168.0.183:8000/api/delete/bill/"+bill_id,
+                       type:'GET',
+                       success:function(result){
+                                    swal({
+                                    text:result.status_message ,
+                                    icon: "success",
+                                    button: "Ok",
+                                    }); 
+                                    console.log(result);
+                                }, 
 
-   $('#bill_details').submit(function(event){
-                            event.preventDefault();
-                            var name=$('#inputname').val();
-                            if(name==''){
-                                swal({
-                                    title: "Fields Empty",
-                                    text: "Please Check the missing Values!!",
-                                    icon: "warning",
-                                    button: "Ok",
-                                    });
-                            }
-                            else{
-                            $.ajax({
-                                url:"http://192.168.0.183:8000/api/search/bill/"+name,
-                                // data:formdata,
-                                type:'GET',
-                                success: function(result){
-                                  // alert(result[0].bill_id);
-                                    if(result.bill_id){
-                                      // for(var i=0;i<result.length; i++){
-                                      var html='<tr>';
-                                      html+='<td>'+result.bill_id+'</td>';
-                                      html+='<td>'+result.client_name+'</td>';
-                                      html+='<td>'+result.bottles+'</td>';
-                                      
-                                      html+='<td>'+result.amount+'</td></tr>';
-                                    //   html.SetEditable();
-                                    // alert(result[i].name);
-                                      $('#table_data').replaceWith(html);
-                                    // }
-                                    //   $('#num1').SetEditable();
-                                      
-                                      // $('#com_details')[0].reset();
-                                    }
-                                },
-                                error:function(error){
-                                  swal({
-                                    text:"Data is not valid",
-                                    icon: "error",
-                                    button: "Ok",
-                                    });
-                                    alert(result.status_message);
-                                }
-                            });
-                            }
-                        })
+
+                     });
+                    //  document.getElementById("#table_data").deleteRow(0);
+
+                   }   
+
   </script>
-<?php include '../include/footer.php'?> 
+ 
