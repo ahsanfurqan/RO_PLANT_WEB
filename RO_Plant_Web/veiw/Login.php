@@ -45,19 +45,40 @@
                                         'email':$('#exampleInputEmail1').val(),
                                         'password':$('#exampleInputPassword1').val()
                                     };
+                                    if(formdata.email=='' || formdata.password==''){
+                                        swal({
+                                    title: "Fields Empty",
+                                    text: "Please Check the missing Values!!",
+                                    icon: "warning",
+                                    button: "Ok",
+                                    });
+                                    }
+                                    else{
                                     alert(formdata.password);
                                     $.ajax({
                                         url:"http://192.168.0.183:8000/api/login",
                                         data:formdata,
                                         type:'POST',
                                         success:function(result){
+                                            swal({
+                                    text:result.status_message ,
+                                    icon: "success",
+                                    button: "Ok",
+                                    }); 
+                                    console.log(result);
                                             alert(result.status_message);
                                             console.log(result);
                                         },
-                                        error:function(result){
-                                            console.log(result);
-                                        }
-                                    });
-                                })
+                                        error:function(error){
+                                    swal({
+                                    text:"You are not signed Up!!",
+                                    icon: "error",
+                                    button: "Ok",
+                                    }); 
+                                    console.log(error);
+                                }
+                            });
+                            }
+                        })
                                 </script>
                                           

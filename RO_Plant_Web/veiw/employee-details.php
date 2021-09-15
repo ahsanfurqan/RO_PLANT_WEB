@@ -72,6 +72,7 @@
 <thead>
 <tr>
 <th>Employee Name</th>
+<th>Address</th>
 <th>Employee Phone Number</th>
 <th>Date Of Joining </th>
 <th>Salary</th>
@@ -118,37 +119,73 @@
 </div>
 </div>
 <?php include '../include/footer.php'?>
-                    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+                  
                     <script>
+
+                           $.ajax({
+                               url:"http://192.168.0.183:8000/api/employee",
+                               type:'GET',
+                               success:(function(data){
+                                 if(data[0].employee_id){
+                                    for(var i=0;i<data.length; i++){
+                                      var html='<tr>';
+                                      html+='<td>'+data[i].name+'</td>';
+                                      html+='<td>'+data[i].address+'</td>';
+                                      html+='<td>'+data[i].phone_number+'</td>';
+                                      html+='<td>'+data[i].date_of_joining+'</td>';
+                                      html+='<td>'+data[i].salary+'</td></tr>';
+                                      
+                                   
+                                      $('#table_data').append(html);
+                                 }  
+                                 } 
+                               })
+                               
+
+                           })
+
                     $('#emp_details').submit(function(event){
                             event.preventDefault();
                             var name=$('#name').val();
-                            
+                            if(name==''){
+                                swal({
+                                    title: "Fields Empty",
+                                    text: "Please Check the missing Values!!",
+                                    icon: "warning",
+                                    button: "Ok",
+                                    });
+                            }
+                            else{
                             $.ajax({
                                 url:"http://192.168.0.183:8000/api/search/employee/"+name,
-                                // data:formdata,
+                                
                                 type:'GET',
                                 success: function(result){
                                     if(result[0].name){
                                       for(var i=0;i<result.length; i++){
                                       var html='<tr>';
                                       html+='<td>'+result[i].name+'</td>';
+                                      html+='<td>'+result[i].address+'</td>';
                                       html+='<td>'+result[i].phone_number+'</td>';
                                       html+='<td>'+result[i].date_of_joining+'</td>';
                                       html+='<td>'+result[i].salary+'</td></tr>';
-                                    //   html.SetEditable();
-                                    // alert(result[i].name);
-                                      $('#table_data').append(html);
-                                      }
-                                    //   $('#num1').SetEditable();
                                       
-                                      // $('#com_details')[0].reset();
+                                   
+                                      $('#table_data').replaceWith(html);
+                                      }
+                                  
                                     }
                                 },
-                                error:function(result){
+                                error:function(error){
+                                    swal({
+                                    text:"Data is not valid or a employee may be registered with this data ",
+                                    icon: "error",
+                                    button: "Ok",
+                                    });
                                     console.log(result)
                                 }
                             });
+                            }
                         })
                         </script>
                       
