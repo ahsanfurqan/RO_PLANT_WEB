@@ -125,6 +125,52 @@
 </div>
 </div>
 </div>
+<button data-toggle="modal" data-target="#update">Summary</button>
+<div class="modal fade" id="update">
+    <div class="modal-dialog modal-lg  modal-dialog-centered">
+      <div class="modal-content"id='model-edit'>
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" >Customer</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputname">Name</label>
+                                                <input type="text" class="form-control" id="inputname"  placeholder="" require>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputAddress"> Address </label>
+                                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" require>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputphone">Phone Number</label>
+                                                <input type="text" class="form-control" id="inputphone"  placeholder="03**-*******">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputprice"> Price/Rate </label>
+                                                <input type="float" class="form-control" id="inputprice">
+                                            </div>
+                                        </div>
+                                        <
+                                       
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info"id='btn-sum1' onclick="copyfunction('#sum1',this.id)">Update</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
 <?php include '../include/footer.php'?>
                    
                     <script>
@@ -140,7 +186,8 @@
                               html+='<td>'+data[i].address+'</td>';
                               html+='<td>'+data[i].phone_number+'</td>';
                               html+='<td>'+data[i].price+'</td>';
-                              html+='<td> <i class="fa fa-trash"id="'+data[i].id+'" onClick= passData(this,this.id)></i></td> </tr>';
+                              html+='<td> <i class="fa fa-trash"id="'+data[i].id+'" onClick= passData(this,this.id)></i></td>';
+                              html+='<td><i class="fa fa-pencil-square-o"id="'+data[i].id+'" data-toggle="modal" data-target="#update"></i></td> </tr>';
                               $('#table_data').append(html);
                             }
                           }
@@ -148,53 +195,10 @@
                       });
 
 
-
-                    // $('#cust_details').submit(function(event){
-                    //         event.preventDefault();
-                    //         var name=$('#name').val();
-                    //         if(name==''){
-                    //             swal({
-                    //                 title: "Fields Empty",
-                    //                 text: "Please Check the missing Values!!",
-                    //                 icon: "warning",
-                    //                 button: "Ok",
-                    //                 });
-                    //         }
-                    //         else{
-                    //         $.ajax({
-                    //             url:"http://192.168.18.43:8000/api/search/client/"+name,
-                    //             // data:formdata,
-                    //             type:'GET',
-                    //             success: function(result){
-                    //                 if(result[0].name){
-                    //                   for(var i=0;i<result.length; i++){
-                    //                   var html='<tr>';
-                    //                   html+='<td>'+result[i].name+'</td>';
-                    //                   html+='<td>'+result[i].id+'</td>';
-                    //                   html+='<td>'+result[i].address+'</td>';
-                    //                   html+='<td>'+result[i].phone_number+'</td>';
-                    //                   html+='<td>'+result[i].price+'</td></tr>';
-                    //                 //   html.SetEditable();
-                    //                 // alert(result[i].name);
-                    //                   $('#table_data').replaceWith(html);
-                    //                   }
-                    //                 //   $('#num1').SetEditable();
-                                      
-                    //                   // $('#com_details')[0].reset();
-                    //                 }
-                    //             },
-                    //             error:function(error){
-                    //               swal({
-                    //                 text:"Data is not valid or a customer may be registered with this data ",
-                    //                 icon: "error",
-                    //                 button: "Ok",
-                    //                 });
-                    //                 console.log(result)
-                    //             }
-                    //         });
-                    //         }
-                    //     })
-
+                    function updateData(btn,id){
+                      // $(btn).parents('tr').attr()
+                    }
+                   
                     function passData(btn,id){
                     //  var name=document.getElementbyid(bill_id);
                     var row = btn.parentNode.parentNode;
