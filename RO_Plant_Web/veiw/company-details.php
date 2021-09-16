@@ -96,7 +96,7 @@
                     <script>
                         
                         $.ajax({
-                                            url:'http://192.168.0.183:8000/api/company',
+                                            url:'http://192.168.18.43:8000/api/company',
                                             type:'GET',  
                                             success:function(data){
                                                 if(data[0].name){
@@ -131,7 +131,7 @@
                             else{
                             
                             $.ajax({
-                                url:"http://192.168.0.183:8000/api/search/company/"+name,
+                                url:"http://192.168.18.43:8000/api/search/company/"+name,
                                 
                                 type:'GET',
                                 success: function(result){

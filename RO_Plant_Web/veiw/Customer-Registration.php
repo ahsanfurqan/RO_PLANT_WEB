@@ -77,7 +77,7 @@
                             else{
                             // alert(formdata.company_id);
                             jQuery.ajax({
-                                url:"http://192.168.0.183:8000/api/register/client",
+                                url:"http://192.168.18.43:8000/api/register/client",
                                 data:formdata,
                                 type:'POST',
                                 datatype:'json',

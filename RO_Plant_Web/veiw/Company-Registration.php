@@ -80,7 +80,7 @@
                             
                             // alert(formdata.phone_number);
                             $.ajax({
-                                url:"http://192.168.0.183:8000/api/register/company",
+                                url:"http://192.168.18.43:8000/api/register/company",
                                 data:formdata,
                                 type:'POST',
                                 success: function(result){

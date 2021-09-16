@@ -59,7 +59,7 @@
                                     else{
                                     alert(formdata.password);
                                     $.ajax({
-                                        url:"http://192.168.0.183:8000/api/login",
+                                        url:"http://192.168.18.43:8000/api/login",
                                         data:formdata,
                                         type:'POST',
                                         success:function(result){

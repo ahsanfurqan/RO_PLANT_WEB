@@ -128,7 +128,7 @@
                    
                     <script>
                       $.ajax({
-                        url:"http://192.168.0.183:8000/api/client",
+                        url:"http://192.168.18.43:8000/api/client",
                         type:'GET',
                         success:function(data){
                           if(data[0].id){
@@ -158,7 +158,7 @@
                             }
                             else{
                             $.ajax({
-                                url:"http://192.168.0.183:8000/api/search/client/"+name,
+                                url:"http://192.168.18.43:8000/api/search/client/"+name,
                                 // data:formdata,
                                 type:'GET',
                                 success: function(result){

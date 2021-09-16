@@ -125,7 +125,7 @@
 <script>
 
                     $.ajax({
-                      url:"http://192.168.0.183:8000/api/bill",
+                      url:"http://192.168.18.43:8000/api/bill",
                       type:'GET',
                       success:function(data){
                         if(data.status_message){
@@ -163,7 +163,7 @@
                     row.parentNode.removeChild(row);
                     
                     $.ajax({
-                       url:"http://192.168.0.183:8000/api/delete/bill/"+bill_id,
+                       url:"http://192.168.18.43:8000/api/delete/bill/"+bill_id,
                        type:'GET',
                        success:function(result){
                                     swal({

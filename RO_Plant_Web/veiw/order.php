@@ -58,7 +58,7 @@
                                 'token':"Ro66yMNTYNZAlO2usbnjITJWhIPAQ792nTvwLzMj6zbYGhlWUgxVUNOeuKLF",
                             };
                             $.ajax({
-                                url:"http://192.168.0.183:8000/api/add/order",
+                                url:"http://192.168.18.43:8000/api/add/order",
                                 type:'POST',
                                 data:formdata,
                                 success: function(result){

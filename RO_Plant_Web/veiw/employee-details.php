@@ -123,7 +123,7 @@
                     <script>
 
                            $.ajax({
-                               url:"http://192.168.0.183:8000/api/employee",
+                               url:"http://192.168.18.43:8000/api/employee",
                                type:'GET',
                                success:(function(data){
                                  if(data[0].employee_id){
@@ -157,7 +157,7 @@
                             }
                             else{
                             $.ajax({
-                                url:"http://192.168.0.183:8000/api/search/employee/"+name,
+                                url:"http://192.168.18.43:8000/api/search/employee/"+name,
                                 
                                 type:'GET',
                                 success: function(result){
