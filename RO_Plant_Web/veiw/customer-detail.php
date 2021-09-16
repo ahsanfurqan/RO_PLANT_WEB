@@ -157,6 +157,12 @@
                                                 <input type="float" class="form-control" id="inputprice">
                                             </div>
                                         </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                
+                                                <input type="hidden" class="form-control" id="userId">
+                                            </div>
+                                        </div>
                                         
                                        
         </div>
@@ -164,7 +170,7 @@
         <!-- Modal footer -->
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-info"id='btn-sum1' onclick="updateData()">Update</button>
+          <button type="button" class="btn btn-info"id='save' onclick="updateData()">Update</button>
         </div>
   
       </div>
@@ -186,7 +192,7 @@
                               html+='<td data-target="phone">'+data[i].phone_number+'</td>';
                               html+='<td data-target="price">'+data[i].price+'</td>';
                               html+='<td> <i class="fa fa-trash"id="'+data[i].id+'" onClick= passData(this,this.id)></i></td>';
-                              html+='<td><i class="fa fa-pencil-square-o"data-id="'+data[i].id+'" data-role="update" ></i></td> </tr>';
+                              html+='<td><i class="fa fa-pencil-square-o"data-id="'+data[i].id+'" data-role="update" onClick=data(this.id)></i></td> </tr>';
                               $('#table_data').append(html);
                             }
                           }
@@ -217,6 +223,7 @@
                     //  document.getElementById("#table_data").deleteRow(0);
 
                    }   
+                   // this is for update
                    $(document).ready(function(){
                     $(document).on('click','i[data-role=update]',function(){
                       var id=$(this).data('id');
@@ -229,8 +236,41 @@
                       $('#inputAddress').val(address); 
                       $('#inputphone').val(phone_number); 
                       $('#inputprice').val(price); 
+                      $('#userId').val(id); 
                       $('#myModal').modal('toggle');
                     })
+                   })
+                  
+                   $('#save').click(function(){
+                     var id=$('#userId').val();
+                     
+                     var formdata={
+                       "name":$('#inputname').val(),
+                       "address":$('#inputAddress').val(),
+                      "phone_number":$('#inputphone').val(),
+                      "price":$('#inputprice').val(),
+                     }
+                    //  alert(formdata.name);
+                     $.ajax({
+                       url:'http://192.168.18.43:8000/api/update/client/'+id,
+                       type:'POST',
+                      data:formdata,
+                      success:function(data){
+                        swal({
+                                    text:data.status_message ,
+                                    icon: "success",
+                                    button: "Ok",
+                                    }); 
+                      },
+                      error: function (error) {
+                              swal({
+                              text:"Data is not valid or a company may be registered with this data ",
+                              icon: "error",
+                              button: "Ok",
+                              }); 
+                              console.log(error);
+                              }
+                     })
                    })
                         </script>
 
