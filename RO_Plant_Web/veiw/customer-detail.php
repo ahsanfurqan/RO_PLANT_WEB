@@ -125,8 +125,7 @@
 </div>
 </div>
 </div>
-<button data-toggle="modal" data-target="#update">Summary</button>
-<div class="modal fade" id="update">
+<div class="modal fade" id="myModal">
     <div class="modal-dialog modal-lg  modal-dialog-centered">
       <div class="modal-content"id='model-edit'>
   
@@ -158,14 +157,14 @@
                                                 <input type="float" class="form-control" id="inputprice">
                                             </div>
                                         </div>
-                                        <
+                                        
                                        
         </div>
   
         <!-- Modal footer -->
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-info"id='btn-sum1' onclick="copyfunction('#sum1',this.id)">Update</button>
+          <button type="button" class="btn btn-info"id='btn-sum1' onclick="updateData()">Update</button>
         </div>
   
       </div>
@@ -180,14 +179,14 @@
                         success:function(data){
                           if(data[0].id){
                             for(var i=0; i<data.length; i++){
-                              var html='<tr>';
-                              html+='<td>'+data[i].name+'</td>';
+                              var html='<tr id="'+data[i].id+'">';
+                              html+='<td data-target="name">'+data[i].name+'</td>';
                               html+='<td>'+data[i].id+'</td>';
-                              html+='<td>'+data[i].address+'</td>';
-                              html+='<td>'+data[i].phone_number+'</td>';
-                              html+='<td>'+data[i].price+'</td>';
+                              html+='<td data-target="address">'+data[i].address+'</td>';
+                              html+='<td data-target="phone">'+data[i].phone_number+'</td>';
+                              html+='<td data-target="price">'+data[i].price+'</td>';
                               html+='<td> <i class="fa fa-trash"id="'+data[i].id+'" onClick= passData(this,this.id)></i></td>';
-                              html+='<td><i class="fa fa-pencil-square-o"id="'+data[i].id+'" data-toggle="modal" data-target="#update"></i></td> </tr>';
+                              html+='<td><i class="fa fa-pencil-square-o"data-id="'+data[i].id+'" data-role="update" ></i></td> </tr>';
                               $('#table_data').append(html);
                             }
                           }
@@ -195,9 +194,6 @@
                       });
 
 
-                    function updateData(btn,id){
-                      // $(btn).parents('tr').attr()
-                    }
                    
                     function passData(btn,id){
                     //  var name=document.getElementbyid(bill_id);
@@ -221,7 +217,21 @@
                     //  document.getElementById("#table_data").deleteRow(0);
 
                    }   
-
+                   $(document).ready(function(){
+                    $(document).on('click','i[data-role=update]',function(){
+                      var id=$(this).data('id');
+                      var name=$('#'+id).children('td[data-target=name]').text();
+                      var address=$('#'+id).children('td[data-target=address]').text();
+                      var phone_number=$('#'+id).children('td[data-target=phone]').text();
+                      var price=$('#'+id).children('td[data-target=price]').text();
+                      // alert(name)
+                      $('#inputname').val(name); 
+                      $('#inputAddress').val(address); 
+                      $('#inputphone').val(phone_number); 
+                      $('#inputprice').val(price); 
+                      $('#myModal').modal('toggle');
+                    })
+                   })
                         </script>
 
 
