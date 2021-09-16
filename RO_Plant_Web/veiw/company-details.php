@@ -86,6 +86,47 @@
 </div>
 </div>
 </div>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg  modal-dialog-centered">
+      <div class="modal-content"id='model-edit'>
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" >Company</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputname">Name</label>
+                                                <input type="text" class="form-control" id="inputname"  placeholder="" require>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputAddress"> Phone Number </label>
+                                                <input type="text"  id="inputphone" class="form-control"  placeholder="03**-*******" require>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputphone">Total Bottle</label>
+                                                <input type="number"  id="inputT-bottles" class="form-control"  placeholder=""require>
+                                            </div>
+                                        </div>
+                                       
+                                       
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info"id='btn-sum1' onclick="copyfunction('#sum1',this.id)">Update</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>    
+
 <?php include '../include/footer.php'?>
 
                     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -103,12 +144,12 @@
                                                 if(data[0].name){
                                                 for(var i=0;i<data.length; i++){
                                                 var html='<tr id="'+data[i].company_id+'">';
-                                                html+='<td>'+data[i].name+'</td>';
-                                                html+='<td>'+data[i].company_id+'</td>';
-                                                html+='<td>'+data[i].phone_number+'</td>';
-                                                html+='<td>'+data[i].total_bottles+'</td>';
+                                                html+='<td data-target="name">'+data[i].name+'</td>';
+                                                html+='<td >'+data[i].company_id+'</td>';
+                                                html+='<td data-target="phone">'+data[i].phone_number+'</td>';
+                                                html+='<td data-target="bottle">'+data[i].total_bottles+'</td>';
                                                 html+='<td> <i class="fa fa-trash"id="'+data[i].company_id+'" onClick= passData(this,this.id)></i></td>';
-                                                html+='<td> <i class="fa fa-pencil-square-o"id="'+data[i].company_id+'" onClick= updateData(this,this.id)></i></td> </tr>';
+                                                html+='<td> <i class="fa fa-pencil-square-o" id="'+data[i].company_id+'"data-role="update"onClick=data(this.id)></i></td> </tr>';
                                                 // alert(data[i].filled);
                                             //   html+='<td>'+data[i].price+'</td></tr>';
                                              $('#table_data').append(html);
@@ -141,11 +182,38 @@
 
                      });
                         }
+                //         $(document).ready(function(){
+                //     $(document).on('click','i[data-role=update]',function(){
+                //       var id=$(this).data('id');
+                //       var name=$('#'+id).children('td[data-target=name]').text();
+                //       var phone_number=$('#'+id).children('td[data-target=phone]').text();
+                //       var total_bottles=$('#'+id).children('td[data-target=bottle]').text();
+                //       alert(id);
+                //       $('#inputname').val(name); 
+                //       $('#inputphone').val(phone_number); 
+                //       $('#inputT-bottles').val(total_bottles); 
+                //       $('#myModal').modal('toggle');
+                //     })
+                //    })
+                   function data(id1) {
+                    var id=id1;
+                      var name=$('#'+id).children('td[data-target=name]').text();
+                      var phone_number=$('#'+id).children('td[data-target=phone]').text();
+                      var total_bottles=$('#'+id).children('td[data-target=bottle]').text();
+                    //   alert(id);
+                      $('#inputname').val(name); 
+                      $('#inputphone').val(phone_number); 
+                      $('#inputT-bottles').val(total_bottles); 
+                      $('#myModal').modal('toggle');
+                   }
+                            // function updateData(){
 
+                            // }
+                                    
 
                     //         function updataData(btn,company_id){
                     //             var row = btn.parentNode.parentNode;
-                    //             row.parentNode.updateChild(row);
+                    //             row.parentNode.removeClass(row);
                            
                         
                     // //  document.getElementById("#table_data").deleteRow(0);
