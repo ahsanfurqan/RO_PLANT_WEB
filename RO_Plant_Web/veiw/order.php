@@ -55,7 +55,7 @@
                                 'barcode':$('#barcode').val(),
                                 'empty':$('#e_bottles').val(),
                                 'filled':$('#f_bottles').val(),
-                                'token':"Ro66yMNTYNZAlO2usbnjITJWhIPAQ792nTvwLzMj6zbYGhlWUgxVUNOeuKLF",
+                                'token':"6eIRkoR8PjJFZfqs3KIR6aIGAaeL4yaTE8ezQgtCb09XI0s0FmhJbth3WimU",
                             };
                             $.ajax({
                                 url:"http://192.168.18.43:8000/api/add/order",

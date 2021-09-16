@@ -35,7 +35,7 @@
                                               </div>  -->
                                             
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                       
                                         
 
                                         </div>
@@ -76,6 +76,7 @@
 <th>Employee Phone Number</th>
 <th>Date Of Joining </th>
 <th>Salary</th>
+<th>Edit</th>
 </tr>
 </thead>
 <tbody id='table_data'>
@@ -133,8 +134,8 @@
                                       html+='<td>'+data[i].address+'</td>';
                                       html+='<td>'+data[i].phone_number+'</td>';
                                       html+='<td>'+data[i].date_of_joining+'</td>';
-                                      html+='<td>'+data[i].salary+'</td></tr>';
-                                      
+                                      html+='<td>'+data[i].salary+'</td>';
+                                      html+='<td> <i class="fa fa-trash"id="'+data[i].employee_id+'" onClick= passData(this,this.id)></i></td> </tr>';
                                    
                                       $('#table_data').append(html);
                                  }  
@@ -144,48 +145,70 @@
 
                            })
 
-                    $('#emp_details').submit(function(event){
-                            event.preventDefault();
-                            var name=$('#name').val();
-                            if(name==''){
-                                swal({
-                                    title: "Fields Empty",
-                                    text: "Please Check the missing Values!!",
-                                    icon: "warning",
+                           function passData(btn,employee_id){
+                    //  var name=document.getElementbyid(bill_id);
+                    var row = btn.parentNode.parentNode;
+                    row.parentNode.removeChild(row);
+                    // alert(employee_id);
+                    $.ajax({
+                       url:'http://192.168.18.43:8000/api/delete/employee/'+employee_id,
+                       type:'DELETE',
+                       success:function(result){
+                                    swal({
+                                    text:result.status_message ,
+                                    icon: "success",
                                     button: "Ok",
-                                    });
-                            }
-                            else{
-                            $.ajax({
-                                url:"http://192.168.18.43:8000/api/search/employee/"+name,
+                                    }); 
+                                    console.log(result);
+                                }, 
+
+
+                     });
+                    //  document.getElementById("#table_data").deleteRow(0);
+
+                   }   
+                    // $('#emp_details').submit(function(event){
+                    //         event.preventDefault();
+                    //         var name=$('#name').val();
+                    //         if(name==''){
+                    //             swal({
+                    //                 title: "Fields Empty",
+                    //                 text: "Please Check the missing Values!!",
+                    //                 icon: "warning",
+                    //                 button: "Ok",
+                    //                 });
+                    //         }
+                    //         else{
+                    //         $.ajax({
+                    //             url:"http://192.168.18.43:8000/api/search/employee/"+name,
                                 
-                                type:'GET',
-                                success: function(result){
-                                    if(result[0].name){
-                                      for(var i=0;i<result.length; i++){
-                                      var html='<tr>';
-                                      html+='<td>'+result[i].name+'</td>';
-                                      html+='<td>'+result[i].address+'</td>';
-                                      html+='<td>'+result[i].phone_number+'</td>';
-                                      html+='<td>'+result[i].date_of_joining+'</td>';
-                                      html+='<td>'+result[i].salary+'</td></tr>';
+                    //             type:'GET',
+                    //             success: function(result){
+                    //                 if(result[0].name){
+                    //                   for(var i=0;i<result.length; i++){
+                    //                   var html='<tr>';
+                    //                   html+='<td>'+result[i].name+'</td>';
+                    //                   html+='<td>'+result[i].address+'</td>';
+                    //                   html+='<td>'+result[i].phone_number+'</td>';
+                    //                   html+='<td>'+result[i].date_of_joining+'</td>';
+                    //                   html+='<td>'+result[i].salary+'</td></tr>';
                                       
                                    
-                                      $('#table_data').replaceWith(html);
-                                      }
+                    //                   $('#table_data').replaceWith(html);
+                    //                   }
                                   
-                                    }
-                                },
-                                error:function(error){
-                                    swal({
-                                    text:"Data is not valid or a employee may be registered with this data ",
-                                    icon: "error",
-                                    button: "Ok",
-                                    });
-                                    console.log(result)
-                                }
-                            });
-                            }
-                        })
+                    //                 }
+                    //             },
+                    //             error:function(error){
+                    //                 swal({
+                    //                 text:"Data is not valid or a employee may be registered with this data ",
+                    //                 icon: "error",
+                    //                 button: "Ok",
+                    //                 });
+                    //                 console.log(result)
+                    //             }
+                    //         });
+                    //         }
+                    //     })
                         </script>
                       

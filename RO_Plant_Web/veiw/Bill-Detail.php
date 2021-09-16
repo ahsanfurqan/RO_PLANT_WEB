@@ -164,7 +164,7 @@
                     
                     $.ajax({
                        url:"http://192.168.18.43:8000/api/delete/bill/"+bill_id,
-                       type:'GET',
+                       type:'DELETE',
                        success:function(result){
                                     swal({
                                     text:result.status_message ,

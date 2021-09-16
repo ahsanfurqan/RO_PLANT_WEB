@@ -64,7 +64,7 @@
                                 "address":$('#inputAddress').val(),
                                 "phone_number":$('#inputphone').val(),
                                 "price":$('#inputprice').val(),
-                                "company_id":$('#inputc-id').val(),
+                                "company_id":'7',
                             };
                             if(formdata.name=='' || formdata.address==''||formdata.phone_number==''||formdata.price=='' || formdata.company_id==''){
                                 swal({

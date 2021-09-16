@@ -32,7 +32,7 @@
                                               </div>  -->
                                             
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Search</button>
+                                       
                                         
 
                                         </div>
@@ -78,6 +78,7 @@
         <th>Address </th>
         <th>Phone Number</th>
         <th>Rate</th>
+        <th>Edit</th>
       </tr>
     </thead>
     <tbody id='table_data'>
@@ -138,58 +139,85 @@
                               html+='<td>'+data[i].id+'</td>';
                               html+='<td>'+data[i].address+'</td>';
                               html+='<td>'+data[i].phone_number+'</td>';
-                              html+='<td>'+data[i].price+'</td></tr>';
-
+                              html+='<td>'+data[i].price+'</td>';
+                              html+='<td> <i class="fa fa-trash"id="'+data[i].id+'" onClick= passData(this,this.id)></i></td> </tr>';
                               $('#table_data').append(html);
                             }
                           }
                         },
                       });
-                    $('#cust_details').submit(function(event){
-                            event.preventDefault();
-                            var name=$('#name').val();
-                            if(name==''){
-                                swal({
-                                    title: "Fields Empty",
-                                    text: "Please Check the missing Values!!",
-                                    icon: "warning",
-                                    button: "Ok",
-                                    });
-                            }
-                            else{
-                            $.ajax({
-                                url:"http://192.168.18.43:8000/api/search/client/"+name,
-                                // data:formdata,
-                                type:'GET',
-                                success: function(result){
-                                    if(result[0].name){
-                                      for(var i=0;i<result.length; i++){
-                                      var html='<tr>';
-                                      html+='<td>'+result[i].name+'</td>';
-                                      html+='<td>'+result[i].id+'</td>';
-                                      html+='<td>'+result[i].address+'</td>';
-                                      html+='<td>'+result[i].phone_number+'</td>';
-                                      html+='<td>'+result[i].price+'</td></tr>';
-                                    //   html.SetEditable();
-                                    // alert(result[i].name);
-                                      $('#table_data').replaceWith(html);
-                                      }
-                                    //   $('#num1').SetEditable();
+
+
+
+                    // $('#cust_details').submit(function(event){
+                    //         event.preventDefault();
+                    //         var name=$('#name').val();
+                    //         if(name==''){
+                    //             swal({
+                    //                 title: "Fields Empty",
+                    //                 text: "Please Check the missing Values!!",
+                    //                 icon: "warning",
+                    //                 button: "Ok",
+                    //                 });
+                    //         }
+                    //         else{
+                    //         $.ajax({
+                    //             url:"http://192.168.18.43:8000/api/search/client/"+name,
+                    //             // data:formdata,
+                    //             type:'GET',
+                    //             success: function(result){
+                    //                 if(result[0].name){
+                    //                   for(var i=0;i<result.length; i++){
+                    //                   var html='<tr>';
+                    //                   html+='<td>'+result[i].name+'</td>';
+                    //                   html+='<td>'+result[i].id+'</td>';
+                    //                   html+='<td>'+result[i].address+'</td>';
+                    //                   html+='<td>'+result[i].phone_number+'</td>';
+                    //                   html+='<td>'+result[i].price+'</td></tr>';
+                    //                 //   html.SetEditable();
+                    //                 // alert(result[i].name);
+                    //                   $('#table_data').replaceWith(html);
+                    //                   }
+                    //                 //   $('#num1').SetEditable();
                                       
-                                      // $('#com_details')[0].reset();
-                                    }
-                                },
-                                error:function(error){
-                                  swal({
-                                    text:"Data is not valid or a customer may be registered with this data ",
-                                    icon: "error",
+                    //                   // $('#com_details')[0].reset();
+                    //                 }
+                    //             },
+                    //             error:function(error){
+                    //               swal({
+                    //                 text:"Data is not valid or a customer may be registered with this data ",
+                    //                 icon: "error",
+                    //                 button: "Ok",
+                    //                 });
+                    //                 console.log(result)
+                    //             }
+                    //         });
+                    //         }
+                    //     })
+
+                    function passData(btn,id){
+                    //  var name=document.getElementbyid(bill_id);
+                    var row = btn.parentNode.parentNode;
+                    row.parentNode.removeChild(row);
+                    // alert(company_id);
+                    $.ajax({
+                       url:'http://192.168.18.43:8000/api/delete/client/'+id,
+                       type:'DELETE',
+                       success:function(result){
+                                    swal({
+                                    text:result.status_message ,
+                                    icon: "success",
                                     button: "Ok",
-                                    });
-                                    console.log(result)
-                                }
-                            });
-                            }
-                        })
+                                    }); 
+                                    console.log(result);
+                                }, 
+
+
+                     });
+                    //  document.getElementById("#table_data").deleteRow(0);
+
+                   }   
+
                         </script>
 
 

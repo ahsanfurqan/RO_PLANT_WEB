@@ -31,7 +31,7 @@
                                               </div>  -->
                                             
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Search</button>
+                                        
                                         
 
                                         </div>
@@ -73,6 +73,7 @@
 <th>Company ID</th>
 <th>Phone Number </th>
 <th>Total Bottles</th>
+<th>Edit</th>
 </tr>
 </thead>
 <tbody id='table_data'>
@@ -101,11 +102,13 @@
                                             success:function(data){
                                                 if(data[0].name){
                                                 for(var i=0;i<data.length; i++){
-                                                var html='<tr>';
+                                                var html='<tr id="'+data[i].company_id+'">';
                                                 html+='<td>'+data[i].name+'</td>';
                                                 html+='<td>'+data[i].company_id+'</td>';
                                                 html+='<td>'+data[i].phone_number+'</td>';
-                                                html+='<td>'+data[i].total_bottles+'</td></tr>';
+                                                html+='<td>'+data[i].total_bottles+'</td>';
+                                                html+='<td> <i class="fa fa-trash"id="'+data[i].company_id+'" onClick= passData(this,this.id)></i></td>';
+                                                html+='<td> <i class="fa fa-pencil-square-o"id="'+data[i].company_id+'" onClick= updateData(this,this.id)></i></td> </tr>';
                                                 // alert(data[i].filled);
                                             //   html+='<td>'+data[i].price+'</td></tr>';
                                              $('#table_data').append(html);
@@ -116,48 +119,50 @@
                                         console.log(data);
                                     } 
                                     })
-                       $('#com_details').submit(function(event){
-                            event.preventDefault();
-                            var name=$('#name').val();
-                            
-                            if(name==''){
-                                swal({
-                                    title: "Fields Empty",
-                                    text: "Please Check the missing Values!!",
-                                    icon: "warning",
-                                    button: "Ok",
-                                    });
-                            }
-                            else{
-                            
-                            $.ajax({
-                                url:"http://192.168.18.43:8000/api/search/company/"+name,
-                                
-                                type:'GET',
-                                success: function(result){
-                                    if(result.name){
-                                      var html='<tr class="num1">';
-                                      html+='<td>'+result.name+'</td>';
-                                      html+='<td>'+result.company_id+'</td>';
-                                      html+='<td>'+result.phone_number+'</td>';
-                                      html+='<td>'+result.total_bottles+'</td></tr>';
-                                   
-                                      $('#table_data').replaceWith(html);
-                                 
-                                    }
-                                },
-                                error:function(error){
+
+                    
+                        function passData(btn,company_id){
+                    //  var name=document.getElementbyid(bill_id);
+                    var row = btn.parentNode.parentNode;
+                    row.parentNode.removeChild(row);
+                    // alert(company_id);
+                    $.ajax({
+                       url:'http://192.168.18.43:8000/api/delete/company/'+company_id,
+                       type:'DELETE',
+                       success:function(result){
                                     swal({
-                                    text:"Data is not valid or a company may be registered with this data ",
-                                    icon: "error",
+                                    text:result.status_message ,
+                                    icon: "success",
                                     button: "Ok",
-                                    });
-                                    console.log(result)
-                                }
-                            });
-                       }
-                        })
-                       
+                                    }); 
+                                    console.log(result);
+                                }, 
+
+
+                     });
+                        }
+
+
+                    //         function updataData(btn,company_id){
+                    //             var row = btn.parentNode.parentNode;
+                    //             row.parentNode.updateChild(row);
+                           
+                        
+                    // //  document.getElementById("#table_data").deleteRow(0);
+
+                    //     $.ajax({
+                    //         url:'http://192.168.18.43:8000/api/delete/company/',
+                    //         type:'POST',
+                    //         success:function(result){
+                    //             swal({
+                    //                 text:result.status_message ,
+                    //                 icon: "success",
+                    //                 button: "Ok",
+                    //                 }); 
+                    //                 console.log(result);
+                    //         },
+                    //     });
+                    // }
                     </script>
 
                     
