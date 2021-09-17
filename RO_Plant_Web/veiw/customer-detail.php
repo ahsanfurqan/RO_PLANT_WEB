@@ -256,11 +256,17 @@
                        type:'POST',
                       data:formdata,
                       success:function(data){
-                        swal({
-                                    text:data.status_message ,
-                                    icon: "success",
-                                    button: "Ok",
-                                    }); 
+                      $('#'+id).children('td[data-target=name]').text(formdata.name);
+                      $('#'+id).children('td[data-target=address]').text(formdata.address);
+                      $('#'+id).children('td[data-target=phone]').text(formdata.phone_number);
+                      $('#'+id).children('td[data-target=price]').text(formdata.price);
+                      $('#myModal').modal('toggle');
+                      swal.fire({
+                        text:data.status_message,
+                        icon:'success',
+                        showConfirmButton:false,
+                        timer:1500
+                      });
                       },
                       error: function (error) {
                               swal({
@@ -268,7 +274,7 @@
                               icon: "error",
                               button: "Ok",
                               }); 
-                              console.log(error);
+                              
                               }
                      })
                    })
