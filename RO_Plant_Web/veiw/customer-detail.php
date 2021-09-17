@@ -264,7 +264,7 @@
                       },
                       error: function (error) {
                               swal({
-                              text:"Data is not valid or a company may be registered with this data ",
+                              text:"Data is not valid or a customer may be registered with this data ",
                               icon: "error",
                               button: "Ok",
                               }); 
