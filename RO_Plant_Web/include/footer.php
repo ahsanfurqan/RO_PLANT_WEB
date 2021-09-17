@@ -27,7 +27,7 @@
 ></script>
 <script>$("#inputphone").mask('0000-0000000');</script>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- <script>$('#makeEditable').SetEditable();</script>   -->

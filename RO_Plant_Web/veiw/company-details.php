@@ -240,7 +240,7 @@
                       });
                       },
                       error: function (error) {
-                              swal({
+                              swal.fire({
                               text:"Data is not valid or a company may be registered with this data ",
                               icon: "error",
                               button: "Ok",

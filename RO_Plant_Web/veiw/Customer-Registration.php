@@ -64,18 +64,18 @@
                                 "address":$('#inputAddress').val(),
                                 "phone_number":$('#inputphone').val(),
                                 "price":$('#inputprice').val(),
-                                "company_id":'7',
+                                "company_id":'18',
                             };
                             if(formdata.name=='' || formdata.address==''||formdata.phone_number==''||formdata.price=='' || formdata.company_id==''){
-                                swal({
+                                swal.fire({
                                     title: "Fields Empty",
                                     text: "Please Check the missing Values!!",
                                     icon: "warning",
-                                    button: "Ok",
+                                    // button: "Ok",
                                     });
                             }
                             else{
-                            // alert(formdata.company_id);
+                            
                             jQuery.ajax({
                                 url:"http://192.168.18.43:8000/api/register/client",
                                 data:formdata,
