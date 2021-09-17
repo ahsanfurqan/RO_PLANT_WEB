@@ -113,14 +113,19 @@
                                                 <input type="number"  id="inputT-bottles" class="form-control"  placeholder=""require>
                                             </div>
                                         </div>
-                                       
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                
+                                                <input type="hidden" class="form-control" id="userId">
+                                            </div>
+                                        </div>
                                        
         </div>
   
         <!-- Modal footer -->
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-info"id='btn-sum1' onclick="copyfunction('#sum1',this.id)">Update</button>
+          <button type="button" class="btn btn-info"id='save' onclick="updateData()">Update</button>
         </div>
   
       </div>
@@ -204,9 +209,48 @@
                       $('#inputname').val(name); 
                       $('#inputphone').val(phone_number); 
                       $('#inputT-bottles').val(total_bottles); 
+                      $('#userId').val(id); 
                       $('#myModal').modal('toggle');
                    }
-                            // function updateData(){
+                   $('#save').click(function(){
+                     var id=$('#userId').val();
+                     
+                     var formdata={
+                       "name":$('#inputname').val(),
+                       "phone":$('#inputphone').val(),
+                      "total_bottles":$('#inputT-bottles').val(),
+                      
+                     }
+                    //  alert(for);
+                     $.ajax({
+                       url:'http://192.168.18.43:8000/api/update/company/'+id,
+                       type:'POST',
+                      data:formdata,
+                      success:function(data){
+                      $('#'+id).children('td[data-target=name]').text(formdata.name);
+                      $('#'+id).children('td[data-target=phone]').text(formdata.phone_number);
+                      $('#'+id).children('td[data-target=bottles]').text(formdata.total_bottles);
+                     
+                      $('#myModal').modal('toggle');
+                        swal.fire({
+                        text:data.status_message,
+                        icon:'success',
+                        showConfirmButton:false,
+                        timer:1500
+                      });
+                      },
+                      error: function (error) {
+                              swal({
+                              text:"Data is not valid or a company may be registered with this data ",
+                              icon: "error",
+                              button: "Ok",
+                              }); 
+                              console.log(error);
+                              }
+                     })
+                   })
+                   </script> 
+                     <!-- // function updateData(){   
 
                             // }
                                     
@@ -230,8 +274,8 @@
                     //                 console.log(result);
                     //         },
                     //     });
-                    // }
-                    </script>
+                    // } -->
+                    
 
                     
                    
