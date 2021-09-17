@@ -59,6 +59,7 @@
         <script>
                         $('#comp_reg').submit(function(event){
                             event.preventDefault();
+                            alert("hi");
                             // var name=$("#inputname").val();
                             // var phone=$("#inputphone").val();
                             // var bottle=$("#inputT-bottles").val();
@@ -68,7 +69,7 @@
                                 "total_bottles":$('#inputT-bottles').val(),
                             };
                             if( formdata.name=='' ||  formdata.phone_number=='' ||  formdata.total_bottles==''){
-                                swal({
+                                swal.fire({
                                     title: "Fields Empty",
                                     text: "Please Check the missing Values!!",
                                     icon: "warning",
@@ -85,14 +86,18 @@
                                 type:'POST',
                                 success: function(result){
                                     // alert(result.status_message);
-                                    swal({
+                                    swal.fire({
                                     text:result.status_message ,
                                     icon: "success",
-                                    button: "Ok",
+                                    // button: "Ok",
                                     });
                                 },
                                 error:function(result){
-                                    alert(result[0]);
+                                    swal.fire({
+                                    text:"data is not Valid" ,
+                                    icon: "error",
+                                    // button: "Ok",
+                                    });
                                 }
                             });
                             

@@ -170,7 +170,7 @@
         <!-- Modal footer -->
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-info"id='save' onclick="updateData()">Update</button>
+          <button type="button" class="btn btn-info"id='save'>Update</button>
         </div>
   
       </div>
@@ -192,7 +192,7 @@
                               html+='<td data-target="phone">'+data[i].phone_number+'</td>';
                               html+='<td data-target="price">'+data[i].price+'</td>';
                               html+='<td> <i class="fa fa-trash"id="'+data[i].id+'" onClick= passData(this,this.id)></i></td>';
-                              html+='<td><i class="fa fa-pencil-square-o"data-id="'+data[i].id+'" data-role="update" onClick=data(this.id)></i></td> </tr>';
+                              html+='<td><i class="fa fa-pencil-square-o"data-id="'+data[i].id+'" data-role="update" ></i></td> </tr>';
                               $('#table_data').append(html);
                             }
                           }
@@ -269,10 +269,9 @@
                       });
                       },
                       error: function (error) {
-                              swal({
-                              text:"Data is not valid or a customer may be registered with this data ",
+                              swal.fire({
+                              text:"Data is not valid or a company may be registered with this data ",
                               icon: "error",
-                              button: "Ok",
                               }); 
                               
                               }

@@ -93,11 +93,11 @@
                             };
                             if(formdata.name=='' || formdata.email==''|| formdata.phone_number==''|| formdata.salary==''||formdata.password==''
                             || formdata.confirm_password=='' || formdata.date_of_joining=='' || formdata.address==''){
-                                swal({
+                                swal.fire({
                                     title: "Fields Empty",
                                     text: "Please Check the missing Values!!",
                                     icon: "warning",
-                                    button: "Ok",
+                                    // button: "Ok",
                                     });
                             }
                             else{
@@ -107,18 +107,18 @@
                                 data:formdata,
                                 type:'POST',
                                 success:function(result){
-                                    swal({
+                                    swal.fire({
                                     text:result.status_message ,
                                     icon: "success",
-                                    button: "Ok",
+                                    // button: "Ok",
                                     }); 
                                     console.log(result);
                                 },
                                 error:function(error){
-                                    swal({
+                                    swal.fire({
                                     text:"Data is not valid or a company may be registered with this data ",
                                     icon: "error",
-                                    button: "Ok",
+                                    // button: "Ok",
                                     }); 
                                     console.log(error);
                                 }
