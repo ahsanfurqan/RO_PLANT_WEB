@@ -161,9 +161,7 @@
                                             }
                                      }
                                     },
-                                    error:function(data){
-                                        console.log(data);
-                                    } 
+                                     
                                     })
 
                     
@@ -176,11 +174,12 @@
                        url:'http://192.168.18.43:8000/api/delete/company/'+company_id,
                        type:'DELETE',
                        success:function(result){
-                                    swal({
-                                    text:result.status_message ,
-                                    icon: "success",
-                                    button: "Ok",
-                                    }); 
+                        swal.fire({
+                        text:data.status_message,
+                        icon:'success',
+                        showConfirmButton:false,
+                        timer:1500
+                      });   
                                     console.log(result);
                                 }, 
 
