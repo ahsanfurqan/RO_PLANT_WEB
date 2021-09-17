@@ -83,19 +83,19 @@
                                 datatype:'json',
                                 success: function(result){
                                     // alert(result.status_message)
-                                    swal({
+                                    swal.fire({
                                     text:result.status_message ,
                                     icon: "success",
-                                    button: "Ok",
+                                    // button: "Ok",
                                     }); 
                                     console.log(result);
                                 },
                                 error: function (error) {
 
-                                    swal({
+                                    swal.fire({
                                     text:"Data is not valid or a company may be registered with this data ",
                                     icon: "error",
-                                    button: "Ok",
+                                    // button: "Ok",
                                     }); 
                                     console.log(error);
                                 }

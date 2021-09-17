@@ -166,10 +166,10 @@
                        url:"http://192.168.18.43:8000/api/delete/bill/"+bill_id,
                        type:'DELETE',
                        success:function(result){
-                                    swal({
+                                    swal.fire({
                                     text:result.status_message ,
                                     icon: "success",
-                                    button: "Ok",
+                                    // button: "Ok",
                                     }); 
                                     console.log(result);
                                 }, 
