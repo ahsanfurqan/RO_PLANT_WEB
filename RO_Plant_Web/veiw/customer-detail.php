@@ -170,7 +170,7 @@
         <!-- Modal footer -->
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-info"id='save'>Update</button>
+          <button type="button" class="btn btn-info" onclick="save()">Update</button>
         </div>
   
       </div>
@@ -210,10 +210,10 @@
                        url:'http://192.168.18.43:8000/api/delete/client/'+id,
                        type:'DELETE',
                        success:function(result){
-                                    swal({
+                                    swal.fire({
                                     text:result.status_message ,
                                     icon: "success",
-                                    button: "Ok",
+                                    // button: "Ok",
                                     }); 
                                     console.log(result);
                                 }, 
@@ -241,7 +241,7 @@
                     })
                    })
                   
-                   $('#save').click(function(){
+                   function save(){
                      var id=$('#userId').val();
                      
                      var formdata={
@@ -250,7 +250,7 @@
                       "phone_number":$('#inputphone').val(),
                       "price":$('#inputprice').val(),
                      }
-                    //  alert(formdata.name);
+                    //  alert(formdata.phone_number);
                      $.ajax({
                        url:'http://192.168.18.43:8000/api/update/client/'+id,
                        type:'POST',
@@ -270,13 +270,13 @@
                       },
                       error: function (error) {
                               swal.fire({
-                              text:"Data is not valid or a company may be registered with this data ",
-                              icon: "error",
+                              text:"Data is not valid",
+                              icon: "warning",
                               }); 
                               
                               }
                      })
-                   })
+                   }
                         </script>
 
 

@@ -148,39 +148,26 @@
                     <input type="text" class="form-control" id="inputaddress"  placeholder="" require>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputemail">Email</label>
-                    <input type="Email" class="form-control" id="inputemail"  placeholder="" require>
+                    <label for="input-date">Date of Joining</label>
+                    <input type="date" class="form-control" id="input-date">
                 </div>
-               
+                
+            <!-- </div> -->
                 
 
             </div>
             <div class="form-row">
-            <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password" require>
-                   
-                    <span>
-                    <i class="fa fa-eye" id="eye" onclick="toggle()" ></i>
-                    </span>
-                </div>
-            <div class="form-group col-md-6">
-                    <label for="inputPassword5">Confirm Password</label>
-                    <input type="password" class="form-control" id="inputPassword5" placeholder="Confirm Password" require>
-                    <span>
-                    <i class="fa fa-eye" id="eye1" onclick="toggle1()" ></i>
-                    </span>
-                </div>
                 
-                <div class="form-group col-md-6">
-                    <label for="input-date">Date of Joining</label>
-                    <input type="date" class="form-control" id="input-date">
-                </div>
                 <div class="form-group col-md-6">
                     <label for="input-salary">Salary</label>
                     <input type="number" class="form-control" id="input-salary">
                 </div>
+                <div class="form-group col-md-6">
+                    <input type="hidden" class="form-control" id="userId"  placeholder="" require>
+                </div>
+                
             </div>
+
         
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
@@ -194,7 +181,7 @@
         <!-- Modal footer -->
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-info"id='save' onclick="updateData()">Update</button>
+          <button type="button" class="btn btn-info" onclick="updateData()">Update</button>
         </div>
   
       </div>
@@ -210,18 +197,14 @@
                                success:function(data){
                                  if(data[0].employee_id){
                                     for(var i=0;i<data.length; i++){
-                                      var html='<tr id="'+data[i].employee_id+'">';
-                                      html+='<td data-target="name">'+data[i].name+'</td>';
-                                      html+='<td>'+data[i].id+'</td>';
-                                      html+='<td data-target="address>'+data[i].address+'</td>';
-                                      html+='<td data-target="phone>'+data[i].phone_number+'</td>';
-                                      html+='<td data-target="email>'+data[i].email+'</td>';
-                                      html+='<td data-target="password>'+data[i].password+'</td>';
-                                      html+='<td data-target="confirm>'+data[i].confirm_password+'</td>';
-                                      html+='<td data-target="joining>'+data[i].date_of_joining+'</td>';
-                                      html+='<td data-target="salary>'+data[i].salary+'</td>';
-                                      html+='<td> <i class="fa fa-trash" id="'+data[i].employee_id+'" onClick= passData(this,this.id)></i></td>';
-                                      html+='<td> <i class="fa fa-pencil-square-o" id="'+data[i].employee_id+'"data-role="update"onClick=data(this.id)></i></td> </tr>';
+                                        var html='<tr id="'+data[i].employee_id+'">';
+                                        html+='<td data-target="name">'+data[i].name+'</td>';
+                                        html+='<td data-target="address">'+data[i].address+'</td>';
+                                        html+='<td data-target="phone">'+data[i].phone_number+'</td>';
+                                        html+='<td data-target="doj">'+data[i].date_of_joining+'</td>';
+                                        html+='<td data-target="salary">'+data[i].salary+'</td>';
+                                        html+='<td> <i class="fa fa-trash"id="'+data[i].employee_id+'" onClick= deleteData(this,this.id)></i></td>';
+                                        html+='<td><i class="fa fa-pencil-square-o"data-id="'+data[i].employee_id+'" data-role="update" onCLick=passData('+data[i].employee_id+') ></i></td> </tr>';
                                       $('#table_data').append(html);
                                             }
                                      }
@@ -230,25 +213,83 @@
                                     })
 
                     
-                        function passData(btn,employee_id){
-                            // var name=document.getElementbyid(employee_id);
-                    var row = btn.parentNode.parentNode;
-                    row.parentNode.removeChild(row);
+                     function deleteData(btn,employee_id){
+                    // alert(employee_id);
                     $.ajax({
                         url:'http://192.168.18.43:8000/api/delete/employee/'+employee_id,
                        type:'DELETE',
                        success:function(result){
                         swal.fire({
-                        text:data.status_message,
+                        text:result.status_message,
                         icon:'success',
                         showConfirmButton:false,
                         timer:1500
-                      });   
-                                    console.log(result);
-                                }, 
-
-
+                      });
+                      var row = btn.parentNode.parentNode;
+                    row.parentNode.removeChild(row);
+                    },
+                      error: function (error) {
+                              swal.fire({
+                              text:"Error in Delete",
+                              icon: "error",
+                              }); 
+                              
+                              }   
                      });
+                        }
+                        function passData(a){
+                      var id=a;
+                    //   alert(a);
+                      var name=$('#'+id).children('td[data-target=name]').text();
+                      var address=$('#'+id).children('td[data-target=address]').text();
+                      var phone_number=$('#'+id).children('td[data-target=phone]').text();
+                      var doj=$('#'+id).children('td[data-target=doj]').text();
+                      var salary=$('#'+id).children('td[data-target=salary]').text();
+                    //   alert(doj);
+                      $('#inputname').val(name); 
+                      $('#inputphone').val(phone_number); 
+                      $('#inputaddress').val(address); 
+                      $('#input-salary').val(salary); 
+                      $('#input-date').val(doj); 
+                      $('#userId').val(id); 
+                      $('#myModal').modal('toggle');
+                        }
+                        function updateData(){
+                            var id=$('#userId').val();
+                            var formdata={
+                                'name':$('#inputname').val(),
+                                'phone_number':$('#inputphone').val(),
+                                'address':$('#inputaddress').val(),
+                                'salary': $('#input-salary').val(),
+                                'date_of_joining':$('#input-date').val()
+                            }
+                            $.ajax({
+                               url:'http://192.168.18.43:8000/api/update/employee/'+id,
+                               type:'POST',
+                               data:formdata,
+                               success:function(data){
+                                $('#'+id).children('td[data-target=name]').text(formdata.name);
+                                $('#'+id).children('td[data-target=address]').text(formdata.address);
+                                $('#'+id).children('td[data-target=phone]').text(formdata.phone_number);
+                                $('#'+id).children('td[data-target=doj]').text(formdata.date_of_joining);
+                                $('#'+id).children('td[data-target=salary]').text(formdata.salary);
+                                   $('#myModal').modal('toggle');
+                                   swal.fire({
+                                       icon:'success',
+                                       text:data.status_message,
+                                       showConfirmButton:false,
+                                        timer:1500
+                                   });
+                               },
+                               error: function (error) {
+                              swal.fire({
+                                icon: "warning",
+                                text:"Data is not valid",
+                              
+                              }); 
+                              
+                              } 
+                            });
                         }
                
                    </script> 

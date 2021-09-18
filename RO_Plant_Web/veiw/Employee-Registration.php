@@ -103,7 +103,7 @@
                             else{
                            
                             $.ajax({
-                                url:"192.168.18.43:8000/api/register/employee",
+                                url:"http://192.168.18.43:8000/api/register/employee",
                                 data:formdata,
                                 type:'POST',
                                 success:function(result){
@@ -112,12 +112,20 @@
                                     icon: "success",
                                     // button: "Ok",
                                     }); 
-                                    console.log(result);
+                                    $('#inputname').val("");
+                                    $('#inputemail').val("");
+                                    $('#inputphone').val("");
+                                    $('#input-salary').val("");
+                                    $('#inputPassword4').val("");
+                                    $('#inputPassword5').val("");
+                                    $('#input-date').val("");
+                                    $('#inputaddress').val("");
+                                    // console.log(result);
                                 },
                                 error:function(error){
                                     swal.fire({
-                                    text:"Data is not valid or a company may be registered with this data ",
-                                    icon: "error",
+                                    text:"Data is not valid ",
+                                    icon: "warning",
                                     // button: "Ok",
                                     }); 
                                     console.log(error);

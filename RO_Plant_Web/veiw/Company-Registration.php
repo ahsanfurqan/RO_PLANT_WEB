@@ -59,7 +59,7 @@
         <script>
                         $('#comp_reg').submit(function(event){
                             event.preventDefault();
-                            alert("hi");
+                            // alert("hi");
                             // var name=$("#inputname").val();
                             // var phone=$("#inputphone").val();
                             // var bottle=$("#inputT-bottles").val();
@@ -77,8 +77,6 @@
                                     });
                             }
                             else{
-                                
-                            
                             // alert(formdata.phone_number);
                             $.ajax({
                                 url:"http://192.168.18.43:8000/api/register/company",
@@ -91,11 +89,14 @@
                                     icon: "success",
                                     // button: "Ok",
                                     });
+                                    $('#inputname').val("");
+                                $('#inputphone').val("");
+                                $('#inputT-bottles').val("");
                                 },
                                 error:function(result){
                                     swal.fire({
                                     text:"data is not Valid" ,
-                                    icon: "error",
+                                    icon: "warning",
                                     // button: "Ok",
                                     });
                                 }

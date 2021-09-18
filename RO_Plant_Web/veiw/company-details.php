@@ -125,7 +125,7 @@
         <!-- Modal footer -->
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-info"id='save' onclick="updateData()">Update</button>
+          <button type="button" class="btn btn-info" id='save' >Update</button>
         </div>
   
       </div>
@@ -154,7 +154,7 @@
                                                 html+='<td data-target="phone">'+data[i].phone_number+'</td>';
                                                 html+='<td data-target="bottle">'+data[i].total_bottles+'</td>';
                                                 html+='<td> <i class="fa fa-trash"id="'+data[i].company_id+'" onClick= passData(this,this.id)></i></td>';
-                                                html+='<td> <i class="fa fa-pencil-square-o" id="'+data[i].company_id+'"data-role="update"onClick=data(this.id)></i></td> </tr>';
+                                                html+='<td> <i class="fa fa-pencil-square-o" id="'+data[i].company_id+'"onClick=data(this.id)></i></td> </tr>';
                                                 // alert(data[i].filled);
                                             //   html+='<td>'+data[i].price+'</td></tr>';
                                              $('#table_data').append(html);
@@ -167,20 +167,20 @@
                     
                         function passData(btn,company_id){
                     //  var name=document.getElementbyid(bill_id);
-                    var row = btn.parentNode.parentNode;
-                    row.parentNode.removeChild(row);
+                    
                     // alert(company_id);
                     $.ajax({
                        url:'http://192.168.18.43:8000/api/delete/company/'+company_id,
                        type:'DELETE',
                        success:function(result){
                         swal.fire({
-                        text:data.status_message,
+                        text:result.status_message,
                         icon:'success',
                         showConfirmButton:false,
                         timer:1500
                       });   
-                                    console.log(result);
+                      var row = btn.parentNode.parentNode;
+                    row.parentNode.removeChild(row);
                                 }, 
 
 
@@ -213,14 +213,12 @@
                    }
                    $('#save').click(function(){
                      var id=$('#userId').val();
-                     
                      var formdata={
                        "name":$('#inputname').val(),
-                       "phone":$('#inputphone').val(),
+                       "phone_number":$('#inputphone').val(),
                       "total_bottles":$('#inputT-bottles').val(),
-                      
                      }
-                    //  alert(for);
+                     alert(id);
                      $.ajax({
                        url:'http://192.168.18.43:8000/api/update/company/'+id,
                        type:'POST',
@@ -229,7 +227,6 @@
                       $('#'+id).children('td[data-target=name]').text(formdata.name);
                       $('#'+id).children('td[data-target=phone]').text(formdata.phone_number);
                       $('#'+id).children('td[data-target=bottles]').text(formdata.total_bottles);
-                     
                       $('#myModal').modal('toggle');
                         swal.fire({
                         text:data.status_message,
@@ -240,8 +237,8 @@
                       },
                       error: function (error) {
                               swal.fire({
-                              text:"Data is not valid or a company may be registered with this data ",
-                              icon: "error",
+                              text:"Data is not valid  ",
+                              icon: "warning",
                               button: "Ok",
                               }); 
                               console.log(error);

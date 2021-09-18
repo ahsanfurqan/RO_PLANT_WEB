@@ -35,15 +35,6 @@
                                                 <input type="float" class="form-control" id="inputprice">
                                             </div>
                                         </div>
-                                        <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                                <label for="inputC-id">Company-ID</label>
-                                                <select id="inputc-id" class="form-control custom-select">
-                                                    <option selected>Choose...</option>
-                                                    <option>1</option>
-                                                </select>
-                                            </div>
-                                        </div>
                                         <button type="submit" class="btn btn-primary">Registor</button>
                                     </form>
                                 </div>
@@ -64,7 +55,7 @@
                                 "address":$('#inputAddress').val(),
                                 "phone_number":$('#inputphone').val(),
                                 "price":$('#inputprice').val(),
-                                "company_id":'18',
+                                "company_id":'12',
                             };
                             if(formdata.name=='' || formdata.address==''||formdata.phone_number==''||formdata.price=='' || formdata.company_id==''){
                                 swal.fire({
@@ -88,13 +79,17 @@
                                     icon: "success",
                                     // button: "Ok",
                                     }); 
-                                    console.log(result);
+                                $('#inputname').val("");
+                                $('#inputAddress').val("");
+                                $('#inputphone').val("");
+                                $('#inputprice').val("");
+                                    // console.log(result);
                                 },
                                 error: function (error) {
 
                                     swal.fire({
-                                    text:"Data is not valid or a company may be registered with this data ",
-                                    icon: "error",
+                                    text:"Data is not valid ",
+                                    icon: "warning",
                                     // button: "Ok",
                                     }); 
                                     console.log(error);
