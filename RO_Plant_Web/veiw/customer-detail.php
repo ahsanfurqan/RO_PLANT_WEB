@@ -191,8 +191,8 @@
                               html+='<td data-target="address">'+data[i].address+'</td>';
                               html+='<td data-target="phone">'+data[i].phone_number+'</td>';
                               html+='<td data-target="price">'+data[i].price+'</td>';
-                              html+='<td> <i class="fa fa-trash"id="'+data[i].id+'" onClick= passData(this,this.id)></i></td>';
-                              html+='<td><i class="fa fa-pencil-square-o"data-id="'+data[i].id+'" data-role="update" ></i></td> </tr>';
+                              html+='<td> <i style="padding-right:20px"class="fa fa-trash fa-2x"id="'+data[i].id+'" onClick= passData(this,this.id)></i>';
+                              html+='<i class="fa fa-pencil-square-o fa-2x"data-id="'+data[i].id+'" data-role="update" ></i></td> </tr>';
                               $('#table_data').append(html);
                             }
                           }

@@ -203,8 +203,7 @@
                                         html+='<td data-target="phone">'+data[i].phone_number+'</td>';
                                         html+='<td data-target="doj">'+data[i].date_of_joining+'</td>';
                                         html+='<td data-target="salary">'+data[i].salary+'</td>';
-                                        html+='<td> <i class="fa fa-trash"id="'+data[i].employee_id+'" onClick= deleteData(this,this.id)></i></td>';
-                                        html+='<td><i class="fa fa-pencil-square-o"data-id="'+data[i].employee_id+'" data-role="update" onCLick=passData('+data[i].employee_id+') ></i></td> </tr>';
+                                        html+='<td > <i style="padding-right:20px" class="fa fa-trash fa-2x" id="'+data[i].employee_id+'" onClick= "deleteData(this,this.id)"></i> <i class="fa fa-pencil-square-o fa-2x" id="'+data[i].employee_id+'"onClick="passData(this.id)"></i></td></tr>';
                                       $('#table_data').append(html);
                                             }
                                      }

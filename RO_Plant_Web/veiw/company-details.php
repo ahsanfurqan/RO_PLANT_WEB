@@ -153,8 +153,8 @@
                                                 html+='<td >'+data[i].company_id+'</td>';
                                                 html+='<td data-target="phone">'+data[i].phone_number+'</td>';
                                                 html+='<td data-target="bottle">'+data[i].total_bottles+'</td>';
-                                                html+='<td> <i class="fa fa-trash"id="'+data[i].company_id+'" onClick= passData(this,this.id)></i></td>';
-                                                html+='<td> <i class="fa fa-pencil-square-o" id="'+data[i].company_id+'"onClick=data(this.id)></i></td> </tr>';
+                                                html+='<td > <i style="padding-right:20px" class="fa fa-trash fa-2x" id="'+data[i].company_id+'" onClick= passData(this,this.id)></i> <i class="fa fa-pencil-square-o fa-2x" id="'+data[i].company_id+'"onClick=data(this.id)></i></td></tr>';
+                                                
                                                 // alert(data[i].filled);
                                             //   html+='<td>'+data[i].price+'</td></tr>';
                                              $('#table_data').append(html);
@@ -218,7 +218,7 @@
                        "phone_number":$('#inputphone').val(),
                       "total_bottles":$('#inputT-bottles').val(),
                      }
-                     alert(id);
+                    //  alert(id);
                      $.ajax({
                        url:'http://192.168.18.43:8000/api/update/company/'+id,
                        type:'POST',
@@ -226,7 +226,7 @@
                       success:function(data){
                       $('#'+id).children('td[data-target=name]').text(formdata.name);
                       $('#'+id).children('td[data-target=phone]').text(formdata.phone_number);
-                      $('#'+id).children('td[data-target=bottles]').text(formdata.total_bottles);
+                      $('#'+id).children('td[data-target=bottle]').text(formdata.total_bottles);
                       $('#myModal').modal('toggle');
                         swal.fire({
                         text:data.status_message,
