@@ -79,7 +79,7 @@
                             else{
                             // alert(formdata.phone_number);
                             $.ajax({
-                                url:"http://192.168.18.43:8000/api/register/company",
+                                url:"http://192.168.0.183:8000/api/register/company",
                                 data:formdata,
                                 type:'POST',
                                 success: function(result){
@@ -87,8 +87,13 @@
                                     swal.fire({
                                     text:result.status_message ,
                                     icon: "success",
-                                    // button: "Ok",
+                                    showConfirmButton:false,
+                                    timer:1500
                                     });
+
+                                   setInterval(function(){
+                                    $("body").load("dashboard.php");
+                                   },2000);
                                     $('#inputname').val("");
                                 $('#inputphone').val("");
                                 $('#inputT-bottles').val("");

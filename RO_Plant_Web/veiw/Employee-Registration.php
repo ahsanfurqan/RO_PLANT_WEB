@@ -103,7 +103,7 @@
                             else{
                            
                             $.ajax({
-                                url:"http://192.168.18.43:8000/api/register/employee",
+                                url:"http://192.168.0.183:8000/api/register/employee",
                                 data:formdata,
                                 type:'POST',
                                 success:function(result){
@@ -111,7 +111,8 @@
                                     text:result.status_message ,
                                     icon: "success",
                                     // button: "Ok",
-                                    }); 
+                                    });
+                                    
                                     $('#inputname').val("");
                                     $('#inputemail').val("");
                                     $('#inputphone').val("");

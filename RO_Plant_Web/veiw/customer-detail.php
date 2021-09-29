@@ -180,7 +180,7 @@
                    
                     <script>
                       $.ajax({
-                        url:"http://192.168.18.43:8000/api/client",
+                        url:"http://192.168.0.183:8000/api/client",
                         type:'GET',
                         success:function(data){
                           if(data[0].id){
@@ -207,7 +207,7 @@
                     row.parentNode.removeChild(row);
                     // alert(company_id);
                     $.ajax({
-                       url:'http://192.168.18.43:8000/api/delete/client/'+id,
+                       url:'http://192.168.0.183:8000/api/delete/client/'+id,
                        type:'DELETE',
                        success:function(result){
                                     swal.fire({
@@ -252,7 +252,7 @@
                      }
                     //  alert(formdata.phone_number);
                      $.ajax({
-                       url:'http://192.168.18.43:8000/api/update/client/'+id,
+                       url:'http://192.168.0.183:8000/api/update/client/'+id,
                        type:'POST',
                       data:formdata,
                       success:function(data){

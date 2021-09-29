@@ -143,7 +143,7 @@
                     <script>
                         
                         $.ajax({
-                                            url:'http://192.168.18.43:8000/api/company',
+                                            url:'http://192.168.0.183:8000/api/company',
                                             type:'GET',  
                                             success:function(data){
                                                 if(data[0].name){
@@ -170,7 +170,7 @@
                     
                     // alert(company_id);
                     $.ajax({
-                       url:'http://192.168.18.43:8000/api/delete/company/'+company_id,
+                       url:'http://192.168.0.183:8000/api/delete/company/'+company_id,
                        type:'DELETE',
                        success:function(result){
                         swal.fire({
@@ -220,7 +220,7 @@
                      }
                     //  alert(id);
                      $.ajax({
-                       url:'http://192.168.18.43:8000/api/update/company/'+id,
+                       url:'http://192.168.0.183:8000/api/update/company/'+id,
                        type:'POST',
                       data:formdata,
                       success:function(data){

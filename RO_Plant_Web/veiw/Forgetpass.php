@@ -39,7 +39,7 @@
                                     };
                                     // alert(formdata.password);
                                     $.ajax({
-                                        url:"http://192.168.18.43:8000/api/forgot-password",
+                                        url:"http://192.168.0.183:8000/api/forgot-password",
                                         data:formdata,
                                         type:'POST',
                                         success:function(result){

@@ -18,18 +18,23 @@
                                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                     </div>
                                    
-                                  
                                     <div class="form-group">
                                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                         <span class="set">
                                                 <i class="fa fa-eye" id="eye" onclick="toggle()" ></i>
                                                 </span>
                                         <a href="forgetpass.php" style="float:right;">forgot password?</a>
+                                        <!-- <a href="Company-Registration.php" id="com" >Register As Company?</a>
+                                        <a href="Employee-Registration.php" id="emp" >Register As Employee?</a> -->
                                     </div>
-                                    
-                                    
-                                    <button type="submit" class="btn btn-primary">Login</button>
-                                        
+                                    <br>
+                                   <div class="form-group">
+                                    <button type="submit" class="btn btn-primary"style="width:150px;" >Login</button>
+                                    <br> <br>
+                                    <button type="submit" id="com" class="btn btn-success">Register Company</button>
+                                    <button type="submit" id="emp" class="btn btn-warning"> Register Employee</button>
+                                    </div>
+                                     
                                 </form>
 </div>
 </div>
@@ -57,19 +62,21 @@
                                     });
                                     }
                                     else{
-                                    alert(formdata.password);
+                                    // alert(formdata.password);
                                     $.ajax({
-                                        url:"http://192.168.18.43:8000/api/login",
+                                        url:"http://192.168.0.183:8000/api/login",
                                         data:formdata,
                                         type:'POST',
                                         success:function(result){
-                                            swal({
-                                    text:result.status_message ,
-                                    icon: "success",
-                                    button: "Ok",
-                                    }); 
+                                    //         swal({
+                                    // text:result.status_message ,
+                                    // icon: "success",
+                                    // button: "Ok",
+                                    // });
+                                    $("body").load("dashboard.php");
+                                    
                                     console.log(result);
-                                            alert(result.status_message);
+                                           
                                             console.log(result);
                                         },
                                         error:function(error){
@@ -83,6 +90,13 @@
                             });
                             }
                         })
+                        $('#com').click(function(){
+                        $("body").load("Company-Registration.php");
+                        });
+
+                        $('#emp').click(function(){
+                        $("body").load("Employee-Registration.php");
+                        });
                                 </script>
                                            <script>
                                 var state=false;

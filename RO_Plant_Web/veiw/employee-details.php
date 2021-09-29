@@ -192,7 +192,7 @@
 <script>
                         
                         $.ajax({
-                            url:"http://192.168.18.43:8000/api/employee",
+                            url:"http://192.168.0.183:8000/api/employee",
                                type:'GET',
                                success:function(data){
                                  if(data[0].employee_id){
@@ -215,7 +215,7 @@
                      function deleteData(btn,employee_id){
                     // alert(employee_id);
                     $.ajax({
-                        url:'http://192.168.18.43:8000/api/delete/employee/'+employee_id,
+                        url:'http://192.168.0.183:8000/api/delete/employee/'+employee_id,
                        type:'DELETE',
                        success:function(result){
                         swal.fire({
@@ -263,7 +263,7 @@
                                 'date_of_joining':$('#input-date').val()
                             }
                             $.ajax({
-                               url:'http://192.168.18.43:8000/api/update/employee/'+id,
+                               url:'http://192.168.0.183:8000/api/update/employee/'+id,
                                type:'POST',
                                data:formdata,
                                success:function(data){

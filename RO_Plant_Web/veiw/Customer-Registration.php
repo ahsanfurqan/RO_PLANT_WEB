@@ -68,7 +68,7 @@
                             else{
                             
                             jQuery.ajax({
-                                url:"http://192.168.18.43:8000/api/register/client",
+                                url:"http://192.168.0.183:8000/api/register/client",
                                 data:formdata,
                                 type:'POST',
                                 datatype:'json',
@@ -79,6 +79,7 @@
                                     icon: "success",
                                     // button: "Ok",
                                     }); 
+                                    $("body").load("customer-detail.php"); 
                                 $('#inputname').val("");
                                 $('#inputAddress').val("");
                                 $('#inputphone').val("");

@@ -191,7 +191,7 @@
                                             
                                 // }
                                 $.ajax({
-                                            url:'http://192.168.18.43:8000/api/display/order',
+                                            url:'http://192.168.0.183:8000/api/display/order',
                                             type:'GET',  
                                             success:function(data){
                                                 if(data[0].order_id){
